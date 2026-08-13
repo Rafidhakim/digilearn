@@ -212,4 +212,79 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 3500);
   }
 
+  /* --------------------------------------------------------------------------
+     5. BACKGROUND MUSIC CONTROLLER (PHASE 4.1)
+     Menggunakan elemen HTML <audio id="bgMusic">
+     localStorage key: digilearnMusicEnabled
+     -------------------------------------------------------------------------- */
+  const bgMusic = document.getElementById('bgMusic');
+  const audioBtn = document.getElementById('btn-audio-toggle');
+
+  if (bgMusic && audioBtn) {
+    // Set volume lembut agar tidak mengganggu belajar
+    bgMusic.volume = 0.25;
+
+    const audioIcon = audioBtn.querySelector('i');
+
+    // Fungsi Update Tampilan Icon & Tooltip
+    function updateAudioUI(isPlaying) {
+      if (isPlaying) {
+        audioIcon.className = 'bi bi-volume-up-fill';
+        audioBtn.classList.add('is-playing');
+        audioBtn.setAttribute('title', 'Matikan Musik');
+      } else {
+        audioIcon.className = 'bi bi-volume-mute-fill';
+        audioBtn.classList.remove('is-playing');
+        audioBtn.setAttribute('title', 'Aktifkan Musik');
+      }
+    }
+
+    // Fungsi Toggle Musik ON / OFF
+    function toggleMusic() {
+      if (bgMusic.paused) {
+        bgMusic.play().then(function () {
+          localStorage.setItem('digilearnMusicEnabled', 'true');
+          updateAudioUI(true);
+        }).catch(function () {
+          // Browser memblokir autoplay — abaikan error
+        });
+      } else {
+        bgMusic.pause();
+        localStorage.setItem('digilearnMusicEnabled', 'false');
+        updateAudioUI(false);
+      }
+    }
+
+    // Event Klik Tombol Audio di Navbar
+    audioBtn.addEventListener('click', toggleMusic);
+
+    // AUTO-RESUME: Jika user sebelumnya mengaktifkan musik (localStorage)
+    var musicEnabled = localStorage.getItem('digilearnMusicEnabled');
+
+    if (musicEnabled === 'true') {
+      // Tampilkan icon ON segera
+      updateAudioUI(true);
+
+      // Coba autoplay (berhasil jika user sudah berinteraksi sebelumnya)
+      bgMusic.play().then(function () {
+        updateAudioUI(true);
+      }).catch(function () {
+        // Browser memblokir autoplay — tunggu interaksi user pertama
+        function resumeOnInteraction() {
+          if (localStorage.getItem('digilearnMusicEnabled') === 'true') {
+            bgMusic.play().then(function () {
+              updateAudioUI(true);
+            }).catch(function () {});
+          }
+          document.removeEventListener('click', resumeOnInteraction);
+          document.removeEventListener('keydown', resumeOnInteraction);
+        }
+        document.addEventListener('click', resumeOnInteraction);
+        document.addEventListener('keydown', resumeOnInteraction);
+      });
+    } else {
+      updateAudioUI(false);
+    }
+  }
+
 });

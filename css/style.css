@@ -303,54 +303,67 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* --------------------------------------------------------------------------
-   7. FOOTER PROFESIONAL DIGILEARN (TASK 6)
+   7. FOOTER MINIMALIS DIGILEARN (REVISI PHASE 4.1)
    -------------------------------------------------------------------------- */
 .footer-digilearn {
   background-color: var(--secondary-brown-dark);
   color: #E0D0C1;
   border-top: 4px solid var(--border-pixel);
-  padding: 45px 0 20px 0;
+  padding: 28px 0 18px 0;
+  text-align: center;
 }
 
-.footer-title {
-  color: #FFFFFF;
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin-bottom: 16px;
+/* --------------------------------------------------------------------------
+   8. AUDIO TOGGLE BUTTON DI NAVBAR (PHASE 4.1)
+   -------------------------------------------------------------------------- */
+.btn-audio-toggle {
+  background-color: var(--bg-cream);
+  color: var(--secondary-brown-dark);
+  border: 2px solid var(--border-pixel);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 1.15rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 0px var(--border-pixel);
   position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.footer-links {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
+.btn-audio-toggle:hover {
+  background-color: var(--primary-green-light);
+  color: var(--primary-green-dark);
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0px var(--border-pixel);
 }
 
-.footer-links li {
-  margin-bottom: 8px;
+.btn-audio-toggle:active {
+  transform: translateY(1px);
+  box-shadow: 1px 1px 0px var(--border-pixel);
 }
 
-.footer-links a {
-  color: var(--accent-blue);
-  text-decoration: none;
-  transition: color 0.2s ease;
+.btn-audio-toggle.is-playing {
+  background-color: var(--primary-green-light);
+  color: var(--primary-green-dark);
+  border-color: var(--primary-green-dark);
+  box-shadow: 0 0 8px rgba(124, 179, 66, 0.5), 2px 2px 0px var(--border-pixel);
 }
 
-.footer-links a:hover {
-  color: var(--accent-yellow);
-  text-decoration: underline;
+/* Animasi ikon audio saat berubah */
+.btn-audio-toggle i {
+  transition: transform 0.3s ease;
 }
 
-.footer-info-list {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 0;
-  font-size: 0.9rem;
+.btn-audio-toggle.is-playing i {
+  animation: audioIconPulse 1.5s ease-in-out infinite;
 }
 
-.footer-info-list li {
-  margin-bottom: 8px;
-  color: #D7CCC8;
+@keyframes audioIconPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
 }
 
 /* Toast alert notification styling */
