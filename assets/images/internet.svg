@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" width="100%" height="100%">
+  <rect width="400" height="240" fill="#FFF59D"/>
+  <!-- Pixel grid -->
+  <path d="M0 40 H400 M0 80 H400 M0 120 H400 M0 160 H400 M0 200 H400" stroke="#FFF176" stroke-width="1.5"/>
+  <path d="M40 0 V240 M80 0 V240 M120 0 V240 M160 0 V240 M200 0 V240 M240 0 V240 M280 0 V240 M320 0 V240 M360 0 V240" stroke="#FFF176" stroke-width="1.5"/>
+
+  <g transform="translate(50, 20)">
+    <!-- Globe / World -->
+    <circle cx="150" cy="100" r="70" fill="#29B6F6" stroke="#4E342E" stroke-width="4"/>
+    <path d="M 100 100 Q 150 70 200 100 Q 150 130 100 100 Z" fill="#66BB6A" stroke="#4E342E" stroke-width="3"/>
+    <path d="M 120 60 Q 150 140 180 60" fill="none" stroke="#4E342E" stroke-width="3"/>
+
+    <!-- Router Box -->
+    <rect x="50" y="150" width="90" height="40" rx="6" fill="#78909C" stroke="#4E342E" stroke-width="4"/>
+    <!-- Antennas -->
+    <line x1="65" y1="150" x2="65" y2="120" stroke="#4E342E" stroke-width="4"/>
+    <line x1="125" y1="150" x2="125" y2="120" stroke="#4E342E" stroke-width="4"/>
+    <!-- Lights -->
+    <circle cx="70" cy="170" r="3" fill="#69F0AE"/>
+    <circle cx="82" cy="170" r="3" fill="#69F0AE"/>
+    <circle cx="94" cy="170" r="3" fill="#FFD740"/>
+
+    <!-- Wifi Signal Waves -->
+    <path d="M220 70 A 30 30 0 0 1 260 110" fill="none" stroke="#4E342E" stroke-width="4" stroke-linecap="round"/>
+    <path d="M230 80 A 18 18 0 0 1 250 100" fill="none" stroke="#4E342E" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="232" cy="98" r="4" fill="#4E342E"/>
+
+    <!-- Shield / Security Icon -->
+    <path d="M240 140 L280 140 L280 170 Q 260 195 240 195 Q 220 195 200 170 L200 140 Z" fill="#8D6E63" stroke="#4E342E" stroke-width="3"/>
+    <path d="M230 155 L238 165 L252 150" fill="none" stroke="#69F0AE" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

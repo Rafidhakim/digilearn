@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 360" width="100%" height="100%">
+  <!-- Pixel Style Desktop Computer & Cozy Desk Illustration -->
+  <defs>
+    <style>
+      .pixel-bg { fill: #F8F5E9; }
+      .pixel-desk { fill: #8D6E63; stroke: #4E342E; stroke-width: 4; }
+      .pixel-desk-top { fill: #A1887F; stroke: #4E342E; stroke-width: 4; }
+      .pixel-monitor-frame { fill: #37474F; stroke: #4E342E; stroke-width: 4; }
+      .pixel-screen { fill: #B3E5FC; stroke: #4E342E; stroke-width: 4; }
+      .pixel-stand { fill: #546E7A; stroke: #4E342E; stroke-width: 4; }
+      .pixel-cpu { fill: #78909C; stroke: #4E342E; stroke-width: 4; }
+      .pixel-btn-green { fill: #7CB342; stroke: #4E342E; stroke-width: 3; }
+      .pixel-plant { fill: #558B2F; }
+      .pixel-pot { fill: #D7CCC8; stroke: #4E342E; stroke-width: 3; }
+      .pixel-window-header { fill: #7CB342; }
+      .pixel-window-body { fill: #FFFFFF; }
+      .pixel-text-line { fill: #90A4AE; }
+    </style>
+  </defs>
+
+  <!-- Ground Shadow -->
+  <ellipse cx="250" cy="330" rx="200" ry="15" fill="#4E342E" opacity="0.15" />
+
+  <!-- Desk -->
+  <rect x="50" y="270" width="400" height="20" rx="4" class="pixel-desk-top" />
+  <rect x="70" y="290" width="30" height="40" class="pixel-desk" />
+  <rect x="400" y="290" width="30" height="40" class="pixel-desk" />
+
+  <!-- CPU Tower -->
+  <rect x="340" y="130" width="80" height="140" rx="6" class="pixel-cpu" />
+  <!-- CPU Details -->
+  <circle cx="380" cy="160" r="10" class="pixel-btn-green" />
+  <rect x="360" y="190" width="40" height="6" fill="#37474F" />
+  <rect x="360" y="205" width="40" height="6" fill="#37474F" />
+  <rect x="360" y="230" width="40" height="20" fill="#455A64" stroke="#4E342E" stroke-width="2" />
+
+  <!-- Monitor Stand -->
+  <rect x="200" y="240" width="40" height="30" class="pixel-stand" />
+  <rect x="180" y="265" width="80" height="8" class="pixel-stand" />
+
+  <!-- Monitor Frame -->
+  <rect x="110" y="80" width="220" height="160" rx="8" class="pixel-monitor-frame" />
+  <!-- Screen -->
+  <rect x="122" y="92" width="196" height="136" rx="4" class="pixel-screen" />
+
+  <!-- Computer Screen Content (DigiLearn Pixel OS UI) -->
+  <rect x="130" y="100" width="180" height="20" class="pixel-window-header" />
+  <circle cx="140" cy="110" r="4" fill="#FF5252" />
+  <circle cx="152" cy="110" r="4" fill="#FFD740" />
+  <circle cx="164" cy="110" r="4" fill="#69F0AE" />
+  <text x="180" y="114" font-family="'Press Start 2P', monospace" font-size="8" fill="#FFFFFF">DigiLearn OS</text>
+
+  <rect x="130" y="125" width="180" height="95" class="pixel-window-body" stroke="#4E342E" stroke-width="2" />
+  
+  <!-- Content inside screen -->
+  <!-- Friendly Pixel Mascot Sprout -->
+  <path d="M145 190 Q 155 160 170 160 Q 185 160 195 190 Z" fill="#81C784" stroke="#4E342E" stroke-width="2" />
+  <circle cx="162" cy="170" r="2" fill="#2E7D32" />
+  <circle cx="178" cy="170" r="2" fill="#2E7D32" />
+  <path d="M166 178 Q 170 182 174 178" stroke="#2E7D32" stroke-width="2" fill="none" />
+
+  <!-- Text Lines on Screen -->
+  <rect x="205" y="140" width="90" height="8" rx="2" class="pixel-text-line" />
+  <rect x="205" y="154" width="70" height="6" rx="2" fill="#B0BEC5" />
+  <rect x="205" y="166" width="80" height="6" rx="2" fill="#B0BEC5" />
+  
+  <!-- Interactive Start Button on Screen -->
+  <rect x="205" y="182" width="60" height="16" rx="4" class="pixel-btn-green" />
+  <text x="212" y="193" font-family="sans-serif" font-weight="bold" font-size="8" fill="#FFFFFF">MULAI</text>
+
+  <!-- Keyboard -->
+  <rect x="130" y="272" width="140" height="12" rx="3" fill="#B0BEC5" stroke="#4E342E" stroke-width="2" />
+  <rect x="140" y="274" width="120" height="4" fill="#37474F" />
+
+  <!-- Mouse -->
+  <rect x="290" y="272" width="20" height="12" rx="4" fill="#B0BEC5" stroke="#4E342E" stroke-width="2" />
+
+  <!-- Pot Plant on Desk -->
+  <rect x="75" y="240" width="30" height="30" class="pixel-pot" />
+  <path d="M 80 240 Q 70 210 90 200 Q 110 210 100 240 Z" fill="#7CB342" stroke="#4E342E" stroke-width="2" />
+  <circle cx="88" cy="220" r="4" fill="#9CCC65" />
+</svg>

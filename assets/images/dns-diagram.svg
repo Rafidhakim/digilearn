@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 180" width="100%" height="100%">
+  <rect width="400" height="180" fill="#F8F5E9"/>
+  <!-- DNS Concept Graphic -->
+  <g transform="translate(20, 20)">
+    <!-- Computer Client -->
+    <rect x="10" y="40" width="80" height="60" rx="6" fill="#B3E5FC" stroke="#4E342E" stroke-width="3"/>
+    <text x="50" y="75" font-family="'Press Start 2P', monospace" font-size="10" fill="#4E342E" text-anchor="middle">PC User</text>
+    
+    <!-- Arrow 1 -->
+    <path d="M 100 70 L 140 70" stroke="#7CB342" stroke-width="4" marker-end="url(#arrow)"/>
+
+    <!-- DNS Server Box -->
+    <rect x="150" y="30" width="90" height="80" rx="8" fill="#FFF59D" stroke="#4E342E" stroke-width="3"/>
+    <text x="195" y="65" font-family="'Press Start 2P', monospace" font-size="10" fill="#4E342E" text-anchor="middle">DNS</text>
+    <text x="195" y="85" font-family="sans-serif" font-weight="bold" font-size="9" fill="#5D4037" text-anchor="middle">Buku Alamat</text>
+
+    <!-- Arrow 2 -->
+    <path d="M 250 70 L 290 70" stroke="#7CB342" stroke-width="4"/>
+
+    <!-- Internet Server -->
+    <circle cx="330" cy="70" r="35" fill="#7CB342" stroke="#4E342E" stroke-width="3"/>
+    <text x="330" y="74" font-family="'Press Start 2P', monospace" font-size="8" fill="#FFFFFF" text-anchor="middle">WEB</text>
+  </g>
+</svg>

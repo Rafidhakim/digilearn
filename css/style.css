@@ -1,0 +1,385 @@
+/* ==========================================================================
+   DigiLearn - Website Pembelajaran Komputer untuk Pemula
+   Tema: Pixel Learning (Stardew Valley Inspired + Modern Clean)
+   Warna Utama:
+   - Cream  : #F8F5E9
+   - Green  : #7CB342
+   - Brown  : #8D6E63
+   - Sky Blue: #B3E5FC
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. IMPORT FONTS & CSS VARIABLES
+   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Press+Start+2P&display=swap');
+
+:root {
+  /* Main Palette */
+  --bg-cream: #F8F5E9;
+  --bg-cream-card: #FFFFFF;
+  --primary-green: #7CB342;
+  --primary-green-dark: #558B2F;
+  --primary-green-light: #DCEDC8;
+  
+  --secondary-brown: #8D6E63;
+  --secondary-brown-dark: #5D4037;
+  --secondary-brown-light: #D7CCC8;
+  
+  --accent-blue: #B3E5FC;
+  --accent-blue-dark: #0288D1;
+  --accent-yellow: #FFF59D;
+
+  --text-dark: #2C3E50;
+  --text-muted: #6C757D;
+  --border-pixel: #4E342E;
+
+  /* Typography */
+  --font-main: 'Poppins', sans-serif;
+  --font-pixel: 'Press Start 2P', monospace, cursive;
+}
+
+/* --------------------------------------------------------------------------
+   2. GENERAL STYLES & RESET
+   -------------------------------------------------------------------------- */
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-cream);
+  color: var(--text-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Heading Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-main);
+  font-weight: 700;
+  color: var(--secondary-brown-dark);
+}
+
+.pixel-font {
+  font-family: var(--font-pixel) !important;
+  letter-spacing: 0.5px;
+}
+
+/* --------------------------------------------------------------------------
+   3. PIXEL DESIGN ACCENTS & UTILITIES
+   -------------------------------------------------------------------------- */
+/* Pixel Border Effect */
+.pixel-box {
+  background-color: #ffffff;
+  border: 3px solid var(--border-pixel);
+  box-shadow: 4px 4px 0px var(--border-pixel);
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pixel-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0px var(--border-pixel);
+}
+
+/* Retro Pixel Button Styles */
+.btn-pixel-green {
+  background-color: var(--primary-green);
+  color: #ffffff;
+  font-weight: 600;
+  border: 3px solid var(--border-pixel);
+  box-shadow: 3px 3px 0px var(--border-pixel);
+  border-radius: 8px;
+  padding: 10px 24px;
+  transition: all 0.15s ease-in-out;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-pixel-green:hover {
+  background-color: var(--primary-green-dark);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px var(--border-pixel);
+}
+
+.btn-pixel-green:active {
+  transform: translateY(2px);
+  box-shadow: 1px 1px 0px var(--border-pixel);
+}
+
+.btn-pixel-brown {
+  background-color: var(--secondary-brown);
+  color: #ffffff;
+  font-weight: 600;
+  border: 3px solid var(--border-pixel);
+  box-shadow: 3px 3px 0px var(--border-pixel);
+  border-radius: 8px;
+  padding: 10px 24px;
+  transition: all 0.15s ease-in-out;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-pixel-brown:hover {
+  background-color: var(--secondary-brown-dark);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px var(--border-pixel);
+}
+
+.btn-pixel-blue {
+  background-color: var(--accent-blue);
+  color: var(--secondary-brown-dark);
+  font-weight: 600;
+  border: 3px solid var(--border-pixel);
+  box-shadow: 3px 3px 0px var(--border-pixel);
+  border-radius: 8px;
+  padding: 10px 24px;
+  transition: all 0.15s ease-in-out;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-pixel-blue:hover {
+  background-color: #81D4FA;
+  color: var(--secondary-brown-dark);
+  transform: translateY(-2px);
+}
+
+/* Pixel Badge */
+.pixel-badge {
+  display: inline-block;
+  background-color: var(--accent-yellow);
+  color: var(--secondary-brown-dark);
+  border: 2px solid var(--border-pixel);
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 4px;
+  box-shadow: 2px 2px 0px var(--border-pixel);
+}
+
+/* Section Title Decorative Line */
+.section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 4px;
+  background-color: var(--primary-green);
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   4. NAVBAR COMPONENT
+   -------------------------------------------------------------------------- */
+.navbar-digilearn {
+  background-color: var(--bg-cream);
+  border-bottom: 3px solid var(--border-pixel);
+  padding: 12px 0;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  color: var(--secondary-brown-dark) !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-icon {
+  width: 36px;
+  height: 36px;
+  background-color: var(--primary-green);
+  border: 2px solid var(--border-pixel);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  box-shadow: 2px 2px 0px var(--border-pixel);
+}
+
+.nav-link {
+  font-weight: 600;
+  color: var(--secondary-brown-dark) !important;
+  margin: 0 4px;
+  padding: 8px 14px !important;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  background-color: var(--primary-green-light);
+  color: var(--primary-green-dark) !important;
+}
+
+/* --------------------------------------------------------------------------
+   5. HERO SECTION
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding: 50px 0 35px 0;
+  background: linear-gradient(180deg, var(--bg-cream) 0%, #F1ECCB 100%);
+  border-bottom: 3px solid var(--border-pixel);
+  position: relative;
+}
+
+.hero-title {
+  font-size: 2.35rem;
+  line-height: 1.25;
+  color: var(--secondary-brown-dark);
+  margin-bottom: 16px;
+}
+
+.hero-description {
+  font-size: 1.05rem;
+  color: #5D4037;
+  margin-bottom: 24px;
+}
+
+.hero-img-container {
+  position: relative;
+  text-align: center;
+}
+
+.hero-img-container img {
+  max-width: 85%;
+  height: auto;
+  filter: drop-shadow(4px 4px 0px rgba(78, 52, 46, 0.4));
+}
+
+/* --------------------------------------------------------------------------
+   6. KATEGORI BELAJAR SECTION
+   -------------------------------------------------------------------------- */
+.kategori-section {
+  padding: 55px 0;
+  background-color: var(--bg-cream);
+}
+
+.card-kategori {
+  border: 3px solid var(--border-pixel);
+  box-shadow: 4px 4px 0px var(--border-pixel);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-kategori:hover {
+  transform: translateY(-6px);
+  box-shadow: 8px 8px 0px var(--border-pixel);
+}
+
+.card-kategori .card-img-top {
+  height: 170px;
+  object-fit: cover;
+  border-bottom: 3px solid var(--border-pixel);
+  background-color: var(--accent-blue);
+}
+
+.card-kategori .card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-kategori .card-title {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.card-kategori .card-text {
+  color: #555;
+  font-size: 0.95rem;
+  flex-grow: 1;
+}
+
+/* --------------------------------------------------------------------------
+   7. FOOTER PROFESIONAL DIGILEARN (TASK 6)
+   -------------------------------------------------------------------------- */
+.footer-digilearn {
+  background-color: var(--secondary-brown-dark);
+  color: #E0D0C1;
+  border-top: 4px solid var(--border-pixel);
+  padding: 45px 0 20px 0;
+}
+
+.footer-title {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.footer-links {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: var(--accent-blue);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--accent-yellow);
+  text-decoration: underline;
+}
+
+.footer-info-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+.footer-info-list li {
+  margin-bottom: 8px;
+  color: #D7CCC8;
+}
+
+/* Toast alert notification styling */
+.custom-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--accent-yellow);
+  color: var(--secondary-brown-dark);
+  border: 3px solid var(--border-pixel);
+  box-shadow: 4px 4px 0px var(--border-pixel);
+  border-radius: 8px;
+  padding: 14px 20px;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 1.85rem;
+  }
+  .hero-section {
+    padding: 40px 0 30px 0;
+  }
+  .section-title {
+    font-size: 1.4rem;
+  }
+}
