@@ -1,22 +1,36 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GPU (Kartu Grafis) - DigiLearn</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DigiLearn Micro-Learning: GPU (Graphics Processing Unit)">
+  <title>GPU (Graphics Processing Unit) - DigiLearn</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css"><link rel="stylesheet" href="../../css/pages.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/pages.css">
 </head>
 <body>
+
+  <!-- NAVBAR COMPONENT -->
   <nav class="navbar navbar-expand-lg navbar-digilearn sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="../../index.html"><span class="brand-icon"><i class="bi bi-display"></i></span><span class="pixel-font text-dark fs-5">Digi<span class="text-success">Learn</span></span></a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../../index.html">Beranda</a></li>
-          <li class="nav-item"><a class="nav-link active" href="../belajar-komputer.html">Belajar Komputer</a></li>
-          <li class="nav-item"><a class="nav-link" href="../quiz.html">Kuis</a></li>
+      <a class="navbar-brand fw-bold" href="../../index.html">
+        <span class="brand-icon"><i class="bi bi-display"></i></span>
+        <span class="pixel-font text-dark fs-5">Digi<span class="text-success">Learn</span></span>
+      </a>
+      <button class="navbar-toggler border-2 border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDigiLearn">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarDigiLearn">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="../../index.html"><i class="bi bi-house-door me-1"></i> Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="../perangkat-komputer.html"><i class="bi bi-cpu me-1"></i> Hardware</a></li>
+          <li class="nav-item"><a class="nav-link" href="../program-komputer.html"><i class="bi bi-window-stack me-1"></i> Software</a></li>
+          <li class="nav-item"><a class="nav-link" href="../internet-jaringan.html"><i class="bi bi-globe2 me-1"></i> Jaringan</a></li>
+          <li class="nav-item"><a class="nav-link" href="../video-pembelajaran.html"><i class="bi bi-play-btn me-1"></i> Video</a></li>
+          <li class="nav-item"><a class="nav-link" href="../quiz.html"><i class="bi bi-controller me-1"></i> Kuis</a></li>
           <li class="nav-item me-2 mt-2 mt-lg-0">
             <button id="btn-audio-toggle" class="btn-audio-toggle" title="Aktifkan Musik">
               <i class="bi bi-volume-mute-fill"></i>
@@ -27,70 +41,124 @@
     </div>
   </nav>
 
+  <!-- BREADCRUMB & BANNER -->
   <header class="page-banner">
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb mb-2">
           <li class="breadcrumb-item"><a href="../../index.html">Beranda</a></li>
-          <li class="breadcrumb-item"><a href="../belajar-komputer.html">Belajar Komputer</a></li>
-          <li class="breadcrumb-item active">GPU</li>
+          <li class="breadcrumb-item"><a href="../perangkat-komputer.html">Perangkat Komputer</a></li>
+          <li class="breadcrumb-item active" aria-current="page">GPU</li>
         </ol>
       </nav>
       <h1 class="fw-bold mb-1"><i class="bi bi-gpu-card text-success me-2"></i>GPU (Graphics Processing Unit)</h1>
-      <p class="text-muted mb-0">Modul Micro-Learning 04 dari 20</p>
+      <p class="text-muted mb-0">Modul Micro-Learning 04 dari 25</p>
     </div>
   </header>
 
+  <!-- MAIN CONTENT (10 EDU COMPONENTS) -->
   <main class="material-content">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
+          
           <div class="material-card">
-            <div class="mb-3 text-center">
-              <img src="../../assets/images/gpu.jpg" onError="this.src='../../assets/images/gpu.svg'" alt="GPU Card" class="img-fluid rounded border border-3 border-dark pixel-box max-w-400">
+            
+            <!-- 1 & 2. GAMBAR KOMPONEN TRANSPARAN -->
+            <div class="mb-4 text-center">
+              <img src="../../assets/images/gpu.png" alt="GPU (Graphics Processing Unit)" class="category-image image-card material-img-clean img-fluid">
             </div>
 
-            <h2>1. Pengertian GPU</h2>
-            <p><strong>GPU</strong> atau Kartu Grafis adalah prosesor khusus yang dirancang untuk mengolah dan merender tampilan grafis gambar, video, dan grafik 3D ke monitor.</p>
+            <!-- 3. PENGERTIAN -->
+            <h2 class="h4 fw-bold text-dark border-bottom border-2 border-dark pb-2 mb-3">
+              <i class="bi bi-info-circle-fill text-success me-2"></i>1. Pengertian GPU (Graphics Processing Unit)
+            </h2>
+            <p class="lh-lg mb-4">
+              GPU (Graphics Processing Unit) atau kartu grafis adalah prosesor khusus yang dirancang untuk mengolah data visual, gambar, animasi, video, dan grafik 3D sebelum ditampilkan ke layar monitor.
+            </p>
 
-            <h2>2. Fungsi Utama</h2>
-            <ul class="pixel-list">
-              <li>Merender piksel visual pada layar monitor secara halus.</li>
-              <li>Mempercepat rendering video 4K dan kalkulasi pemodelan 3D.</li>
+            <!-- 4. FUNGSI UTAMA -->
+            <h2 class="h4 fw-bold text-dark border-bottom border-2 border-dark pb-2 mb-3">
+              <i class="bi bi-gear-wide-connected text-primary me-2"></i>2. Fungsi Utama
+            </h2>
+            <ul class="pixel-list mb-4">
+              <li>Merender piksel gambar dan video agar muncul di layar monitor.</li><li>Memproses objek 3D dan efek pencahayaan pada game atau software desain.</li><li>Meringankan beban CPU dalam mengolah grafis dan visual berat.</li>
             </ul>
 
-            <h2>3. Cara Kerja GPU</h2>
-            <p>GPU memproses ribuan instruksi matematis matriks piksel secara sejajar (parallel processing) untuk menghasilkan jutaan warna di monitor.</p>
-
-            <h2>4. Contoh Penggunaan</h2>
-            <p class="text-muted small bg-light p-3 border border-2 border-dark rounded-3">Bermain game PC 3D dengan grafik tinggi atau mengedit video animasi di Blender/Premiere.</p>
-
-            <h2>5. Tips Pemula</h2>
-            <div class="p-3 bg-light border border-2 border-dark rounded-3 mb-3">
-              <strong class="text-success"><i class="bi bi-lightbulb-fill me-1"></i> Tips:</strong> Pastikan Power Supply (PSU) Anda memiliki kabel daya PCIe yang cukup untuk GPU dedicated.
+            <!-- 5. CARA KERJA SEDERHANA -->
+            <h2 class="h4 fw-bold text-dark border-bottom border-2 border-dark pb-2 mb-3">
+              <i class="bi bi-cpu-fill text-danger me-2"></i>3. Cara Kerja Sederhana
+            </h2>
+            <div class="p-3 bg-light border border-2 border-dark rounded-3 mb-4 lh-lg">
+              GPU menerima perintah visual dari CPU, lalu menggunakan ribuan inti pemroses kecilnya secara paralel untuk mengkalkulasi koordinat piksel, warna, dan pencahayaan dengan cepat.
             </div>
 
-            <h2>6. Fakta Menarik</h2>
-            <div class="p-3 bg-warning bg-opacity-25 border border-2 border-dark rounded-3">
-              <strong class="text-dark"><i class="bi bi-star-fill text-warning me-1"></i> Fakta:</strong> GPU modern memiliki memori vRAM khusus sendiri untuk menyimpan tekstur grafik.
+            <!-- 6. CONTOH PENGGUNAAN SEHARI-HARI -->
+            <h2 class="h4 fw-bold text-dark border-bottom border-2 border-dark pb-2 mb-3">
+              <i class="bi bi-laptop-fill text-warning me-2"></i>4. Contoh Penggunaan Sehari-hari
+            </h2>
+            <p class="p-3 bg-light border border-2 border-dark rounded-3 mb-4 lh-lg">
+              <i class="bi bi-chat-quote-fill me-2 text-secondary"></i>Saat Anda memutar video resolusi tinggi 4K atau bermain game 3D, GPU bekerja keras membentuk setiap bingkai gambar (frame) per detik.
+            </p>
+
+            <!-- 7. TIPS PEMULA (BOX HIJAU MUDA) -->
+            <div class="box-tips-pemula">
+              <h3 class="h5 fw-bold text-success mb-2">
+                <i class="bi bi-lightbulb-fill me-2"></i>Tips Pemula
+              </h3>
+              <p class="mb-0 small text-dark lh-base">Untuk kebutuhan mengetik dokumen dan browsing internet, GPU terintegrasi pada CPU sudah cukup tanpa perlu membeli VGA discrete mahal.</p>
             </div>
 
+            <!-- 8. FAKTA MENARIK (BOX BIRU MUDA) -->
+            <div class="box-fakta-menarik">
+              <h3 class="h5 fw-bold text-primary mb-2">
+                <i class="bi bi-star-fill me-2"></i>Fakta Menarik
+              </h3>
+              <p class="mb-0 small text-dark lh-base">GPU modern tidak hanya dipakai untuk visual game, tetapi juga digunakan untuk komputasi AI (Kecerdasan Buatan) dan pemrosesan data sains skala besar.</p>
+            </div>
+
+            <!-- 9. ISTILAH PENTING (BOX KUNING MUDA) -->
+            <div class="box-istilah-penting">
+              <h3 class="h5 fw-bold text-warning-emphasis mb-2">
+                <i class="bi bi-journal-bookmark-fill me-2"></i>Istilah Penting
+              </h3>
+              <div class="small text-dark lh-base"><strong>VRAM:</strong> Memori khusus pada kartu grafis untuk menyimpan data tekstur.<br><strong>Integrated Graphics:</strong> GPU yang menyatu di dalam chip CPU.<br><strong>Dedicated GPU:</strong> Kartu grafis terpisah dengan performa lebih tinggi.</div>
+            </div>
+
+            <!-- 10. RINGKASAN MATERI -->
+            <div class="box-ringkasan">
+              <h3 class="h5 fw-bold text-dark mb-3 border-bottom border-2 border-dark pb-2">
+                <i class="bi bi-bookmark-check-fill text-success me-2"></i>Ringkasan Materi
+              </h3>
+              <ul class="mb-0 ps-3">
+                <li class='mb-2'>GPU bertanggung jawab mengolah data visual dan grafis ke monitor.</li><li class='mb-2'>Sangat penting untuk bermain game 3D, video editing, dan desain grafis.</li><li class='mb-2'>Memiliki VRAM khusus untuk menyimpan tekstur gambar.</li>
+              </ul>
+            </div>
+
+            <!-- TOMBOL TANDAI SELESAI -->
             <div class="mt-4 pt-3 border-top border-2 border-dark text-center">
-              <button id="btn-mark-topic-complete" data-topic-id="gpu" class="btn btn-pixel-green w-100 mb-3">
+              <button id="btn-mark-topic-complete" data-topic-id="gpu" class="btn btn-pixel-green w-100 mb-3 py-2 fw-bold">
                 <i class="bi bi-check-circle me-1"></i> Tandai Topik Ini Selesai
               </button>
             </div>
 
+            <!-- NAVIGASI PREVIOUS / LIST / NEXT -->
             <div class="d-flex justify-content-between align-items-center pt-2">
-              <a href="motherboard.html" class="btn btn-pixel-brown btn-sm"><i class="bi bi-arrow-left me-1"></i> Motherboard</a>
-              <a href="ssd.html" class="btn btn-pixel-green btn-sm">SSD Storage <i class="bi bi-arrow-right ms-1"></i></a>
+              <a href="motherboard.html" class="btn btn-pixel-brown btn-sm fw-bold"><i class="bi bi-arrow-left me-1"></i> Motherboard</a>
+              <a href="../perangkat-komputer.html" class="btn btn-secondary border border-2 border-dark btn-sm fw-bold px-3">
+                <i class="bi bi-grid-fill me-1"></i> Daftar Perangkat Komputer
+              </a>
+              <a href="ssd.html" class="btn btn-pixel-green btn-sm fw-bold">SSD (Storage) <i class="bi bi-arrow-right ms-1"></i></a>
             </div>
+
           </div>
+
         </div>
       </div>
     </div>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer-digilearn">
     <div class="container">
       <span class="pixel-font fs-6 text-white d-block mb-2">Digi<span class="text-success">Learn</span></span>
@@ -98,12 +166,14 @@
       <p class="small mb-0 text-white-50">&copy; 2026 DigiLearn. Seluruh Hak Cipta Dilindungi.</p>
     </div>
   </footer>
-  <!-- AUDIO PLAYER (Background Music Pixel Theme) -->
+
+  <!-- AUDIO PLAYER -->
   <audio id="bgMusic" loop>
-    <source src="../../assets/audio/pixel-theme.mp3" type="audio/mpeg">
+    <source src="../../assets/audio/pixel-music.mp3" type="audio/mpeg">
   </audio>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../../js/main.js"></script>
+  <script src="../../js/audio-manager.js"></script>
 </body>
 </html>

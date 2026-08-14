@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <!-- Meta Tags & SEO -->
@@ -46,7 +46,16 @@
             <a class="nav-link" href="../index.html"><i class="bi bi-house-door me-1"></i> Beranda</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="belajar-komputer.html"><i class="bi bi-grid-fill me-1"></i> Belajar Komputer</a>
+            <a class="nav-link" href="perangkat-komputer.html"><i class="bi bi-cpu me-1"></i> Hardware</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="program-komputer.html"><i class="bi bi-window-stack me-1"></i> Software</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="internet-jaringan.html"><i class="bi bi-globe2 me-1"></i> Jaringan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="video-pembelajaran.html"><i class="bi bi-play-btn me-1"></i> Video</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="quiz.html"><i class="bi bi-controller me-1"></i> Kuis</a>
@@ -85,38 +94,33 @@
   <!-- ==========================================================================
        3. FONDASI STRUCTURAL PHASE 5 QUIZ & BADGE SYSTEM
        ========================================================================== -->
+  <!-- ==========================================================================
+       3. QUIZ CONTAINER (LEVEL SELECTION, QUIZ AREA, RESULT)
+       ========================================================================== -->
   <main class="material-content">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
-          
-          <!-- Banner Pengenalan Phase 5 -->
-          <div class="alert alert-info border-3 border-dark pixel-box d-flex align-items-center mb-4">
-            <i class="bi bi-info-circle-fill text-primary fs-3 me-3"></i>
-            <div>
-              <strong>Fondasi Kuis Phase 5 Siap!</strong>
-              <div class="small text-muted">Struktur tingkat kuis, penilaian akhir, dan badge kelulusan telah disiapkan.</div>
-            </div>
-          </div>
 
-          <!-- SECTION 1: LEVEL TINGKAT KESULITAN -->
-          <div class="material-card mb-4">
-            <h2 class="h4 fw-bold mb-3 border-bottom border-2 border-dark pb-2">
-              <i class="bi bi-bar-chart-steps text-success me-2"></i>Pilih Level Kesulitan Kuis
+          <!-- SECTION 1: LEVEL SELECTION -->
+          <div id="quiz-level-section" class="material-card mb-4">
+            <h2 class="h4 fw-bold mb-2 border-bottom border-2 border-dark pb-2 text-center">
+              <i class="bi bi-controller text-success me-2"></i>Kuis Pengetahuan Komputer
             </h2>
+            <p class="text-center text-muted mb-4">Pilih tingkat kesulitan yang sesuai dengan kemampuanmu.</p>
 
-            <div class="row g-3">
+            <div class="row g-4">
               <!-- Level Mudah -->
               <div class="col-md-4">
                 <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box text-center h-100 d-flex flex-column justify-content-between">
                   <div>
                     <i class="bi bi-sprout-fill text-success fs-1 mb-2 d-block"></i>
-                    <h3 class="h5 fw-bold">Level Mudah</h3>
-                    <span class="badge bg-success text-white mb-2">10 Soal Dasar</span>
-                    <p class="text-muted small">Menguji pengenalan fisik hardware dasar dan istilah komputer.</p>
+                    <h3 class="h5 fw-bold">LEVEL MUDAH</h3>
+                    <span class="badge bg-success text-white mb-2">10 Soal</span>
+                    <p class="text-muted small">Materi dasar pengenalan hardware dan istilah umum.</p>
                   </div>
-                  <button class="btn btn-pixel-green btn-sm w-100 mt-3" disabled>
-                    <i class="bi bi-lock-fill me-1"></i> Siap Phase 5
+                  <button class="btn btn-pixel-green btn-sm w-100 mt-3" onclick="startQuiz('mudah')">
+                    <i class="bi bi-play-fill me-1"></i> Mulai Kuis
                   </button>
                 </div>
               </div>
@@ -126,12 +130,12 @@
                 <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box text-center h-100 d-flex flex-column justify-content-between">
                   <div>
                     <i class="bi bi-laptop-fill text-primary fs-1 mb-2 d-block"></i>
-                    <h3 class="h5 fw-bold">Level Sedang</h3>
-                    <span class="badge bg-primary text-white mb-2">15 Soal Menengah</span>
-                    <p class="text-muted small">Menguji pemahaman fungsi software, browser, dan rumus office.</p>
+                    <h3 class="h5 fw-bold">LEVEL SEDANG</h3>
+                    <span class="badge bg-primary text-white mb-2">15 Soal</span>
+                    <p class="text-muted small">Materi campuran hardware, software ringan, dan jaringan.</p>
                   </div>
-                  <button class="btn btn-pixel-green btn-sm w-100 mt-3" disabled>
-                    <i class="bi bi-lock-fill me-1"></i> Siap Phase 5
+                  <button class="btn btn-pixel-green btn-sm w-100 mt-3" onclick="startQuiz('sedang')">
+                    <i class="bi bi-play-fill me-1"></i> Mulai Kuis
                   </button>
                 </div>
               </div>
@@ -141,57 +145,106 @@
                 <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box text-center h-100 d-flex flex-column justify-content-between">
                   <div>
                     <i class="bi bi-trophy-fill text-warning fs-1 mb-2 d-block"></i>
-                    <h3 class="h5 fw-bold">Level Sulit</h3>
-                    <span class="badge bg-danger text-white mb-2">20 Soal Ahli</span>
-                    <p class="text-muted small">Menguji protokol jaringan DNS, arsitektur hardware, dan OS.</p>
+                    <h3 class="h5 fw-bold">LEVEL SULIT</h3>
+                    <span class="badge bg-danger text-white mb-2">20 Soal</span>
+                    <p class="text-muted small">Materi lebih mendalam mencakup jaringan dan software.</p>
                   </div>
-                  <button class="btn btn-pixel-green btn-sm w-100 mt-3" disabled>
-                    <i class="bi bi-lock-fill me-1"></i> Siap Phase 5
+                  <button class="btn btn-pixel-green btn-sm w-100 mt-3" onclick="startQuiz('sulit')">
+                    <i class="bi bi-play-fill me-1"></i> Mulai Kuis
                   </button>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- SECTION 2: STRUKTUR NILAI AKHIR & BADGE BELAJAR -->
-          <div class="material-card">
-            <h2 class="h4 fw-bold mb-3 border-bottom border-2 border-dark pb-2">
-              <i class="bi bi-award-fill text-warning me-2"></i>Struktur Nilai Akhir & Badge Belajar
+          <!-- SECTION 2: QUIZ AREA (Hidden by default) -->
+          <div id="quiz-area-section" class="material-card mb-4" style="display: none;">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h2 id="quiz-question-number" class="h5 fw-bold m-0 text-primary">Soal 1 dari 10</h2>
+              <span id="quiz-level-badge" class="badge bg-success">MUDAH</span>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress border border-2 border-dark mb-4" style="height: 20px; border-radius: 8px; background-color: var(--bg-cream);">
+              <div id="quiz-progress-bar" class="progress-bar bg-success progress-bar-striped progress-bar-animated text-dark fw-bold" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">0%</div>
+            </div>
+
+            <!-- Question -->
+            <div class="quiz-question-box p-4 border border-2 border-dark rounded-3 bg-light mb-4">
+              <h3 id="quiz-question-text" class="h5 fw-bold m-0 lh-base">Pertanyaan akan muncul di sini...</h3>
+            </div>
+
+            <!-- Options -->
+            <div id="quiz-options-container" class="d-flex flex-column gap-3 mb-4">
+              <!-- Options injected via JS -->
+            </div>
+
+            <!-- Navigation -->
+            <div class="d-flex justify-content-between">
+              <button id="btn-prev-question" class="btn btn-secondary border border-2 border-dark fw-bold px-4" onclick="prevQuestion()" disabled>
+                <i class="bi bi-arrow-left me-1"></i> Sebelumnya
+              </button>
+              <button id="btn-next-question" class="btn btn-pixel-green px-4" onclick="nextQuestion()">
+                Selanjutnya <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- SECTION 3: RESULT AREA (Hidden by default) -->
+          <div id="quiz-result-section" class="material-card mb-4 text-center" style="display: none;">
+            <h2 class="h3 fw-bold mb-2 border-bottom border-2 border-dark pb-3">
+              <i class="bi bi-flag-fill text-primary me-2"></i>Hasil Akhir Kuis
             </h2>
-
-            <div class="row g-3 text-center">
-              <div class="col-6 col-md-3">
-                <div class="p-3 bg-light border border-2 border-dark rounded-3">
-                  <div class="fs-2 mb-1">🌱</div>
-                  <strong class="d-block text-dark small">0 - 25%</strong>
-                  <span class="badge bg-secondary">Badge Pemula</span>
+            
+            <div class="my-4">
+              <h3 id="quiz-result-status" class="display-6 fw-bold mb-3">🏆 Sangat Baik</h3>
+              
+              <div class="row justify-content-center g-3 mb-4">
+                <div class="col-6 col-sm-3">
+                  <div class="p-3 border border-2 border-dark rounded-3 bg-white text-dark fw-bold">
+                    <span class="d-block text-muted small mb-1">Skor Akhir</span>
+                    <span id="quiz-result-score" class="fs-2 fw-bold text-success">100</span>
+                  </div>
                 </div>
-              </div>
-
-              <div class="col-6 col-md-3">
-                <div class="p-3 bg-light border border-2 border-dark rounded-3">
-                  <div class="fs-2 mb-1">💻</div>
-                  <strong class="d-block text-dark small">26 - 50%</strong>
-                  <span class="badge bg-warning text-dark">Badge Operator</span>
+                <div class="col-6 col-sm-3">
+                  <div class="p-3 border border-2 border-dark rounded-3 bg-white text-dark fw-bold">
+                    <span class="d-block text-muted small mb-1">Grade</span>
+                    <span id="quiz-result-grade" class="fs-2 fw-bold text-primary">A</span>
+                  </div>
                 </div>
-              </div>
-
-              <div class="col-6 col-md-3">
-                <div class="p-3 bg-light border border-2 border-dark rounded-3">
-                  <div class="fs-2 mb-1">🔧</div>
-                  <strong class="d-block text-dark small">51 - 75%</strong>
-                  <span class="badge bg-primary text-white">Badge Teknisi</span>
+                <div class="col-6 col-sm-3">
+                  <div class="p-3 border border-2 border-dark rounded-3 bg-white text-success fw-bold">
+                    <i class="bi bi-check-circle-fill fs-4 me-1"></i>
+                    <span id="quiz-result-correct">0</span> Benar
+                  </div>
                 </div>
-              </div>
-
-              <div class="col-6 col-md-3">
-                <div class="p-3 bg-light border border-2 border-dark rounded-3">
-                  <div class="fs-2 mb-1">🚀</div>
-                  <strong class="d-block text-dark small">76 - 100%</strong>
-                  <span class="badge bg-success text-white">Badge Ahli</span>
+                <div class="col-6 col-sm-3">
+                  <div class="p-3 border border-2 border-dark rounded-3 bg-white text-danger fw-bold">
+                    <i class="bi bi-x-circle-fill fs-4 me-1"></i>
+                    <span id="quiz-result-wrong">0</span> Salah
+                  </div>
                 </div>
               </div>
             </div>
+
+            <div class="d-flex justify-content-center gap-3 flex-wrap border-top border-2 border-dark pt-4">
+              <button class="btn btn-pixel-green px-4" onclick="resetQuiz()">
+                <i class="bi bi-arrow-counterclockwise me-1"></i> Ulangi Kuis
+              </button>
+              <a href="../index.html" class="btn btn-secondary border border-2 border-dark fw-bold px-4">
+                <i class="bi bi-house-door-fill me-1"></i> Kembali ke Beranda
+              </a>
+            </div>
+
+            <!-- Quiz History Section -->
+            <div class="mt-5 text-start">
+              <h4 class="h5 fw-bold mb-3"><i class="bi bi-clock-history text-secondary me-2"></i>Riwayat Kuis Terakhir</h4>
+              <ul id="quiz-history-list" class="list-group list-group-flush border border-2 border-dark rounded-3">
+                <!-- History injected via JS -->
+                <li class="list-group-item text-muted text-center py-3">Belum ada riwayat kuis.</li>
+              </ul>
+            </div>
+
           </div>
 
         </div>
@@ -213,10 +266,12 @@
   <!-- Scripts -->
   <!-- AUDIO PLAYER (Background Music Pixel Theme) -->
   <audio id="bgMusic" loop>
-    <source src="../assets/audio/pixel-theme.mp3" type="audio/mpeg">
+    <source src="../assets/audio/pixel-music.mp3" type="audio/mpeg">
   </audio>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/audio-manager.js"></script>
+  <script src="../js/quiz.js"></script>
 </body>
 </html>

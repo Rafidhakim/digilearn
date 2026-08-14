@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DigiLearn - Internet & Jaringan: 4 Modul Konektivitas & Jaringan Komputer.">
+  <title>Internet & Jaringan - DigiLearn</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- DigiLearn Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. NAVBAR COMPONENT
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-digilearn sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">
+        <span class="brand-icon">
+          <i class="bi bi-display"></i>
+        </span>
+        <span class="pixel-font text-dark fs-5">Digi<span class="text-success">Learn</span></span>
+      </a>
+
+      <button class="navbar-toggler border-2 border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDigiLearn">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarDigiLearn">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html"><i class="bi bi-house-door me-1"></i> Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="perangkat-komputer.html"><i class="bi bi-cpu me-1"></i> Hardware</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="program-komputer.html"><i class="bi bi-window-stack me-1"></i> Software</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="internet-jaringan.html"><i class="bi bi-globe2 me-1"></i> Jaringan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="video-pembelajaran.html"><i class="bi bi-play-btn me-1"></i> Video</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quiz.html"><i class="bi bi-controller me-1"></i> Kuis</a>
+          </li>
+          <li class="nav-item me-2 mt-2 mt-lg-0">
+            <button id="btn-audio-toggle" class="btn-audio-toggle" title="Aktifkan Musik">
+              <i class="bi bi-volume-mute-fill"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       2. PAGE HEADER BANNER & BREADCRUMB
+       ========================================================================== -->
+  <header class="page-banner">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-2">
+          <li class="breadcrumb-item"><a href="../index.html">Beranda</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Internet & Jaringan</li>
+        </ol>
+      </nav>
+      <h1 class="fw-bold mb-1"><i class="bi bi-globe2 text-warning me-2"></i>Internet & Jaringan</h1>
+      <p class="text-muted mb-0">Pelajari 4 modul dasar konektivitas internet dan jaringan komputer secara lengkap.</p>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       3. PROGRESS BAR & NETWORK MODULES
+       ========================================================================== -->
+  <main class="material-content">
+    <div class="container">
+      
+      <!-- Progress Bar Card Global -->
+      <div id="micro-progress-container"></div>
+
+      <!-- KATEGORI: INTERNET & JARINGAN (4 MATERI) -->
+      <div class="material-card mb-4">
+        <div class="d-flex align-items-center justify-content-between mb-3 border-bottom border-2 border-dark pb-2">
+          <h2 class="h4 m-0"><i class="bi bi-globe2 text-warning me-2"></i>Modul Internet & Jaringan</h2>
+          <span class="pixel-badge">4 Modul</span>
+        </div>
+
+        <div class="row g-3">
+          <!-- Internet -->
+          <div class="col-md-3 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">22. Internet</span>
+                  <span id="status-badge-internet" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Jaringan komputer raksasa global penghubung dunia.</p>
+              </div>
+              <a href="internet/internet.html" class="btn btn-pixel-green btn-sm w-100">Baca Internet <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Router -->
+          <div class="col-md-3 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">23. Router</span>
+                  <span id="status-badge-router" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Perangkat pengarah dan pembagi paket data jaringan.</p>
+              </div>
+              <a href="internet/router.html" class="btn btn-pixel-green btn-sm w-100">Baca Router <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- WiFi -->
+          <div class="col-md-3 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">24. Wi-Fi</span>
+                  <span id="status-badge-wifi" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Teknologi koneksi internet nirkabel tanpa kabel.</p>
+              </div>
+              <a href="internet/wifi.html" class="btn btn-pixel-green btn-sm w-100">Baca Wi-Fi <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- DNS -->
+          <div class="col-md-3 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">25. DNS Server</span>
+                  <span id="status-badge-dns" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Sistem penerjemah nama domain ke kode angka IP.</p>
+              </div>
+              <a href="internet/dns.html" class="btn btn-pixel-green btn-sm w-100">Baca DNS <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       4. FOOTER PROFESIONAL DIGILEARN
+       ========================================================================== -->
+  <footer class="footer-digilearn">
+    <div class="container">
+      <span class="pixel-font fs-6 text-white d-block mb-2">Digi<span class="text-success">Learn</span></span>
+      <p class="small text-white-50 mb-1">Platform pembelajaran komputer interaktif untuk pemula.</p>
+      <p class="small mb-0 text-white-50">&copy; 2026 DigiLearn. Seluruh Hak Cipta Dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- AUDIO PLAYER -->
+  <audio id="bgMusic" loop>
+    <source src="../assets/audio/pixel-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/audio-manager.js"></script>
+</body>
+</html>

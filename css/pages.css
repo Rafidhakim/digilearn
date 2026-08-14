@@ -55,16 +55,23 @@
   margin-bottom: 12px;
 }
 
-.material-img {
-  width: 100%;
-  max-height: 250px;
+.material-img,
+.category-image,
+.image-card,
+.material-img-clean {
+  width: auto;
+  max-width: 100%;
+  max-height: 220px;
+  height: auto;
   object-fit: contain;
-  background-color: var(--accent-blue);
-  border: 3px solid var(--border-pixel);
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 20px;
-  box-shadow: 3px 3px 0px var(--border-pixel);
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0;
+  padding: 0;
+  margin: 0 auto 20px auto;
+  display: block;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 /* Custom Pixel List */
@@ -160,3 +167,73 @@
   color: var(--secondary-brown);
   font-weight: bold;
 }
+
+/* --------------------------------------------------------------------------
+   5. QUIZ COMPONENT
+   -------------------------------------------------------------------------- */
+.quiz-option-label {
+  display: block;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  border: 2px solid var(--border-pixel);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 0;
+  box-shadow: 2px 2px 0px var(--border-pixel);
+}
+
+.quiz-option-label:hover {
+  background-color: var(--primary-green-light);
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0px var(--border-pixel);
+}
+
+.quiz-option-input:checked + .quiz-option-label {
+  background-color: var(--primary-green);
+  color: #ffffff;
+  border-color: var(--border-pixel);
+  box-shadow: inset 2px 2px 0px rgba(0,0,0,0.2);
+  transform: translateY(1px);
+}
+
+/* --------------------------------------------------------------------------
+   6. EDUCATIONAL BOXES (PHASE 4.3)
+   -------------------------------------------------------------------------- */
+.box-tips-pemula {
+  background-color: #e8f5e9;
+  border: 2px solid #2e7d32;
+  box-shadow: 3px 3px 0px #1b5e20;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.box-fakta-menarik {
+  background-color: #e3f2fd;
+  border: 2px solid #1565c0;
+  box-shadow: 3px 3px 0px #0d47a1;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.box-istilah-penting {
+  background-color: #fffde7;
+  border: 2px solid #f57f17;
+  box-shadow: 3px 3px 0px #e65100;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.box-ringkasan {
+  background-color: #f9f9f9;
+  border: 3px solid var(--border-pixel);
+  box-shadow: 4px 4px 0px var(--border-pixel);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-top: 30px;
+  margin-bottom: 24px;
+}
+

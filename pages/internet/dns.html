@@ -1,22 +1,36 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DNS Server - DigiLearn</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DigiLearn Micro-Learning: DNS (Domain Name System)">
+  <title>DNS (Domain Name System) - DigiLearn</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../css/style.css"><link rel="stylesheet" href="../../css/pages.css">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/pages.css">
 </head>
 <body>
+
+  <!-- NAVBAR COMPONENT -->
   <nav class="navbar navbar-expand-lg navbar-digilearn sticky-top">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="../../index.html"><span class="brand-icon"><i class="bi bi-display"></i></span><span class="pixel-font text-dark fs-5">Digi<span class="text-success">Learn</span></span></a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../../index.html">Beranda</a></li>
-          <li class="nav-item"><a class="nav-link active" href="../belajar-komputer.html">Belajar Komputer</a></li>
-          <li class="nav-item"><a class="nav-link" href="../quiz.html">Kuis</a></li>
+      <a class="navbar-brand fw-bold" href="../../index.html">
+        <span class="brand-icon"><i class="bi bi-display"></i></span>
+        <span class="pixel-font text-dark fs-5">Digi<span class="text-success">Learn</span></span>
+      </a>
+      <button class="navbar-toggler border-2 border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDigiLearn">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarDigiLearn">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="../../index.html"><i class="bi bi-house-door me-1"></i> Beranda</a></li>
+          <li class="nav-item"><a class="nav-link" href="../perangkat-komputer.html"><i class="bi bi-cpu me-1"></i> Hardware</a></li>
+          <li class="nav-item"><a class="nav-link" href="../program-komputer.html"><i class="bi bi-window-stack me-1"></i> Software</a></li>
+          <li class="nav-item"><a class="nav-link" href="../internet-jaringan.html"><i class="bi bi-globe2 me-1"></i> Jaringan</a></li>
+          <li class="nav-item"><a class="nav-link" href="../video-pembelajaran.html"><i class="bi bi-play-btn me-1"></i> Video</a></li>
+          <li class="nav-item"><a class="nav-link" href="../quiz.html"><i class="bi bi-controller me-1"></i> Kuis</a></li>
           <li class="nav-item me-2 mt-2 mt-lg-0">
             <button id="btn-audio-toggle" class="btn-audio-toggle" title="Aktifkan Musik">
               <i class="bi bi-volume-mute-fill"></i>
@@ -27,69 +41,124 @@
     </div>
   </nav>
 
+  <!-- BREADCRUMB & BANNER -->
   <header class="page-banner">
     <div class="container">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb mb-2">
           <li class="breadcrumb-item"><a href="../../index.html">Beranda</a></li>
-          <li class="breadcrumb-item"><a href="../belajar-komputer.html">Belajar Komputer</a></li>
-          <li class="breadcrumb-item active">DNS</li>
+          <li class="breadcrumb-item"><a href="../internet-jaringan.html">Internet & Jaringan</a></li>
+          <li class="breadcrumb-item active" aria-current="page">DNS</li>
         </ol>
       </nav>
-      <h1 class="fw-bold mb-1"><i class="bi bi-diagram-3-fill text-info me-2"></i>DNS (Domain Name System)</h1>
-      <p class="text-muted mb-0">Modul Micro-Learning 20 dari 20</p>
+      <h1 class="fw-bold mb-1"><i class="bi bi-server text-success me-2"></i>DNS (Domain Name System)</h1>
+      <p class="text-muted mb-0">Modul Micro-Learning 25 dari 25</p>
     </div>
   </header>
 
+  <!-- MAIN CONTENT (10 EDU COMPONENTS) -->
   <main class="material-content">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
+          
           <div class="material-card">
-            <div class="mb-3 text-center">
-              <img src="../../assets/images/dns-diagram.jpg" onError="this.src='../../assets/images/dns-diagram.svg'" alt="Diagram DNS" class="img-fluid rounded border border-3 border-dark pixel-box max-w-400">
+            
+            <!-- 1 & 2. GAMBAR KOMPONEN TRANSPARAN -->
+            <div class="mb-4 text-center">
+              <img src="../../assets/images/dns.png" alt="DNS (Domain Name System)" class="category-image image-card material-img-clean img-fluid">
             </div>
 
-            <h2>1. Pengertian DNS</h2>
-            <p><strong>DNS (Domain Name System)</strong> adalah sistem pangkalan data terdistribusi yang menerjemahkan nama domain situs yang mudah diingat manusia menjadi kode alamat IP angka komputer.</p>
+            <!-- 3. PENGERTIAN -->
+            <h2 class="h4 fw-bold text-dark border-bottom border-2 border-dark pb-2 mb-3">
+              <i class="bi bi-info-circle-fill text-success me-2"></i>1. Pengertian DNS (Domain Name System)
+            </h2>
+            <p class="lh-lg mb-4">
+              DNS (Domain Name System) adalah sistem buku telepon internet yang bertugas menerjemahkan nama domain web yang mudah diingat manusia (seperti `google.com`) menjadi alamat IP numerik (seperti `142.250.190.46`) yang digunakan komputer.
+            </p>
 
-            <h2>2. Fungsi Utama</h2>
-            <ul class="pixel-list">
-              <li>Menerjemahkan nama domain (contoh: <code>google.com</code>) menjadi IP Address (contoh: <code>142.250.190.46</code>).</li>
+            <!-- 4. FUNGSI UTAMA -->
+            <h2 class="h4 fw-bold text-dark border-bottom border-2 border-dark pb-2 mb-3">
+              <i class="bi bi-gear-wide-connected text-primary me-2"></i>2. Fungsi Utama
+            </h2>
+            <ul class="pixel-list mb-4">
+              <li>Menerjemahkan nama situs web huruf menjadi alamat nomor IP komputer server.</li><li>Memudahkan manusia mengakses internet tanpa perlu menghafal deretan angka IP rumit.</li><li>Meningkatkan efisiensi sistem pencarian alamat server di seluruh dunia.</li>
             </ul>
 
-            <h2>3. Cara Kerja DNS</h2>
-            <p>Saat Anda mengetik nama domain, komputer mengirimkan query ke DNS Server. DNS Server mencari nomor IP pencocokan dalam buku alamat global lalu mengembalikan datanya ke komputer Anda.</p>
-
-            <h2>4. Contoh Penggunaan</h2>
-            <p class="text-muted small bg-light p-3 border border-2 border-dark rounded-3">Mengetik <code>youtube.com</code> tanpa perlu menghafal deretan nomor IP angka server YouTube.</p>
-
-            <h2>5. Tips Pemula</h2>
-            <div class="p-3 bg-light border border-2 border-dark rounded-3 mb-3">
-              <strong class="text-success"><i class="bi bi-lightbulb-fill me-1"></i> Tips:</strong> Menggunakan DNS publik cepat seperti Cloudflare (1.1.1.1) atau Google (8.8.8.8) dapat mempercepat respon browsing.
+            <!-- 5. CARA KERJA SEDERHANA -->
+            <h2 class="h4 fw-bold text-dark border-bottom border-2 border-dark pb-2 mb-3">
+              <i class="bi bi-cpu-fill text-danger me-2"></i>3. Cara Kerja Sederhana
+            </h2>
+            <div class="p-3 bg-light border border-2 border-dark rounded-3 mb-4 lh-lg">
+              Saat Anda mengetik `google.com` di browser:<br>1. Komputer bertanya ke DNS Server: <em>'Berapa IP address google.com?'</em><br>2. DNS Server menjawab: <em>'142.250.190.46'</em>.<br>3. Browser lalu mengarahkan koneksi Anda langsung ke IP server tersebut.
             </div>
 
-            <h2>6. Fakta Menarik</h2>
-            <div class="p-3 bg-warning bg-opacity-25 border border-2 border-dark rounded-3">
-              <strong class="text-dark"><i class="bi bi-star-fill text-warning me-1"></i> Fakta:</strong> Tanpa DNS, kita harus menghafal kombinasi kode angka IP rumit untuk setiap website di dunia!
+            <!-- 6. CONTOH PENGGUNAAN SEHARI-HARI -->
+            <h2 class="h4 fw-bold text-dark border-bottom border-2 border-dark pb-2 mb-3">
+              <i class="bi bi-laptop-fill text-warning me-2"></i>4. Contoh Penggunaan Sehari-hari
+            </h2>
+            <p class="p-3 bg-light border border-2 border-dark rounded-3 mb-4 lh-lg">
+              <i class="bi bi-chat-quote-fill me-2 text-secondary"></i>Mengingat nama domain `youtube.com` jauh lebih mudah dibanding menghafal angka IP `172.217.16.206`.
+            </p>
+
+            <!-- 7. TIPS PEMULA (BOX HIJAU MUDA) -->
+            <div class="box-tips-pemula">
+              <h3 class="h5 fw-bold text-success mb-2">
+                <i class="bi bi-lightbulb-fill me-2"></i>Tips Pemula
+              </h3>
+              <p class="mb-0 small text-dark lh-base">Anda dapat mengganti pengaturan DNS di komputer ke Public DNS super cepat seperti Google DNS (`8.8.8.8`) atau Cloudflare (`1.1.1.1`).</p>
             </div>
 
+            <!-- 8. FAKTA MENARIK (BOX BIRU MUDA) -->
+            <div class="box-fakta-menarik">
+              <h3 class="h5 fw-bold text-primary mb-2">
+                <i class="bi bi-star-fill me-2"></i>Fakta Menarik
+              </h3>
+              <p class="mb-0 small text-dark lh-base">Terdapat 13 pasang grup server DNS utama (Root Server) di seluruh dunia yang menjaga agar internet global tetap dapat terhubung!</p>
+            </div>
+
+            <!-- 9. ISTILAH PENTING (BOX KUNING MUDA) -->
+            <div class="box-istilah-penting">
+              <h3 class="h5 fw-bold text-warning-emphasis mb-2">
+                <i class="bi bi-journal-bookmark-fill me-2"></i>Istilah Penting
+              </h3>
+              <div class="small text-dark lh-base"><strong>Domain Name:</strong> Nama alamat web berupa huruf (misal: `digilearn.com`).<br><strong>DNS Resolution:</strong> Proses pencarian nomor IP dari sebuah nama domain.<br><strong>IP Address:</strong> Deretan angka unik alamat fisik server internet.</div>
+            </div>
+
+            <!-- 10. RINGKASAN MATERI -->
+            <div class="box-ringkasan">
+              <h3 class="h5 fw-bold text-dark mb-3 border-bottom border-2 border-dark pb-2">
+                <i class="bi bi-bookmark-check-fill text-success me-2"></i>Ringkasan Materi
+              </h3>
+              <ul class="mb-0 ps-3">
+                <li class='mb-2'>DNS adalah buku telepon internet yang mengubah nama domain menjadi IP address.</li><li class='mb-2'>Memudahkan manusia menjelajahi internet tanpa menghafal angka IP.</li><li class='mb-2'>DNS publik seperti Cloudflare 1.1.1.1 dapat mempercepat pencarian web.</li>
+              </ul>
+            </div>
+
+            <!-- TOMBOL TANDAI SELESAI -->
             <div class="mt-4 pt-3 border-top border-2 border-dark text-center">
-              <button id="btn-mark-topic-complete" data-topic-id="dns" class="btn btn-pixel-green w-100 mb-3">
+              <button id="btn-mark-topic-complete" data-topic-id="dns" class="btn btn-pixel-green w-100 mb-3 py-2 fw-bold">
                 <i class="bi bi-check-circle me-1"></i> Tandai Topik Ini Selesai
               </button>
             </div>
 
+            <!-- NAVIGASI PREVIOUS / LIST / NEXT -->
             <div class="d-flex justify-content-between align-items-center pt-2">
-              <a href="wifi.html" class="btn btn-pixel-brown btn-sm"><i class="bi bi-arrow-left me-1"></i> Wi-Fi</a>
-              <a href="../quiz.html" class="btn btn-pixel-green btn-sm">Evaluasi Kuis Phase 5 <i class="bi bi-controller ms-1"></i></a>
+              <a href="wifi.html" class="btn btn-pixel-brown btn-sm fw-bold"><i class="bi bi-arrow-left me-1"></i> Wi-Fi (Nirkabel)</a>
+              <a href="../internet-jaringan.html" class="btn btn-secondary border border-2 border-dark btn-sm fw-bold px-3">
+                <i class="bi bi-grid-fill me-1"></i> Daftar Internet & Jaringan
+              </a>
+              <a href="../quiz.html" class="btn btn-primary btn-sm fw-bold">Mulai Kuis <i class="bi bi-controller ms-1"></i></a>
             </div>
+
           </div>
+
         </div>
       </div>
     </div>
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer-digilearn">
     <div class="container">
       <span class="pixel-font fs-6 text-white d-block mb-2">Digi<span class="text-success">Learn</span></span>
@@ -97,12 +166,14 @@
       <p class="small mb-0 text-white-50">&copy; 2026 DigiLearn. Seluruh Hak Cipta Dilindungi.</p>
     </div>
   </footer>
-  <!-- AUDIO PLAYER (Background Music Pixel Theme) -->
+
+  <!-- AUDIO PLAYER -->
   <audio id="bgMusic" loop>
-    <source src="../../assets/audio/pixel-theme.mp3" type="audio/mpeg">
+    <source src="../../assets/audio/pixel-music.mp3" type="audio/mpeg">
   </audio>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="../../js/main.js"></script>
+  <script src="../../js/audio-manager.js"></script>
 </body>
 </html>

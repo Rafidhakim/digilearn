@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DigiLearn - Perangkat Komputer (Hardware): 13 Modul Komponen Fisik Komputer.">
+  <title>Perangkat Komputer - DigiLearn</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <!-- DigiLearn Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. NAVBAR COMPONENT
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-digilearn sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">
+        <span class="brand-icon">
+          <i class="bi bi-display"></i>
+        </span>
+        <span class="pixel-font text-dark fs-5">Digi<span class="text-success">Learn</span></span>
+      </a>
+
+      <button class="navbar-toggler border-2 border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDigiLearn">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarDigiLearn">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html"><i class="bi bi-house-door me-1"></i> Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="perangkat-komputer.html"><i class="bi bi-cpu me-1"></i> Hardware</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="program-komputer.html"><i class="bi bi-window-stack me-1"></i> Software</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="internet-jaringan.html"><i class="bi bi-globe2 me-1"></i> Jaringan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="video-pembelajaran.html"><i class="bi bi-play-btn me-1"></i> Video</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quiz.html"><i class="bi bi-controller me-1"></i> Kuis</a>
+          </li>
+          <li class="nav-item me-2 mt-2 mt-lg-0">
+            <button id="btn-audio-toggle" class="btn-audio-toggle" title="Aktifkan Musik">
+              <i class="bi bi-volume-mute-fill"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       2. PAGE HEADER BANNER & BREADCRUMB
+       ========================================================================== -->
+  <header class="page-banner">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-2">
+          <li class="breadcrumb-item"><a href="../index.html">Beranda</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Perangkat Komputer</li>
+        </ol>
+      </nav>
+      <h1 class="fw-bold mb-1"><i class="bi bi-cpu text-success me-2"></i>Perangkat Komputer (Hardware)</h1>
+      <p class="text-muted mb-0">Pelajari 13 modul komponen fisik utama penyusun perangkat komputer secara lengkap.</p>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       3. PROGRESS BAR & HARDWARE MODULES
+       ========================================================================== -->
+  <main class="material-content">
+    <div class="container">
+      
+      <!-- Progress Bar Card Global -->
+      <div id="micro-progress-container"></div>
+
+      <!-- KATEGORI: PERANGKAT KOMPUTER (13 MATERI) -->
+      <div class="material-card mb-4">
+        <div class="d-flex align-items-center justify-content-between mb-3 border-bottom border-2 border-dark pb-2">
+          <h2 class="h4 m-0"><i class="bi bi-cpu text-success me-2"></i>Modul Hardware Komputer</h2>
+          <span class="pixel-badge">13 Modul</span>
+        </div>
+
+        <div class="row g-3">
+          <!-- CPU -->
+          <div class="col-md-4 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">01. CPU (Processor)</span>
+                  <span id="status-badge-cpu" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Otak utama pengolah data dan perintah sistem komputer.</p>
+              </div>
+              <a href="hardware/cpu.html" class="btn btn-pixel-green btn-sm w-100">Baca Materi CPU <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- RAM -->
+          <div class="col-md-4 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">02. RAM (Memory)</span>
+                  <span id="status-badge-ram" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Memori penyimpanan sementara untuk kelancaran multitasking.</p>
+              </div>
+              <a href="hardware/ram.html" class="btn btn-pixel-green btn-sm w-100">Baca Materi RAM <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Motherboard -->
+          <div class="col-md-4 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">03. Motherboard</span>
+                  <span id="status-badge-motherboard" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Papan sirkuit utama penghubung seluruh komponen hardware.</p>
+              </div>
+              <a href="hardware/motherboard.html" class="btn btn-pixel-green btn-sm w-100">Baca Motherboard <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- GPU -->
+          <div class="col-md-4 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">04. GPU (Kartu Grafis)</span>
+                  <span id="status-badge-gpu" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Prosesor khusus pengolah visual, gambar 3D, dan video.</p>
+              </div>
+              <a href="hardware/gpu.html" class="btn btn-pixel-green btn-sm w-100">Baca Materi GPU <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- SSD -->
+          <div class="col-md-4 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">05. SSD Storage</span>
+                  <span id="status-badge-ssd" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Penyimpanan permanen berkecepatan tinggi berbasis flash chip.</p>
+              </div>
+              <a href="hardware/ssd.html" class="btn btn-pixel-green btn-sm w-100">Baca Materi SSD <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- HDD -->
+          <div class="col-md-4 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">06. HDD (Hard Disk)</span>
+                  <span id="status-badge-hdd" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Penyimpanan magnetik piringan ekonomis kapasitas terabyte.</p>
+              </div>
+              <a href="hardware/hdd.html" class="btn btn-pixel-green btn-sm w-100">Baca Materi HDD <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- PSU -->
+          <div class="col-md-4 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">07. PSU (Power Supply)</span>
+                  <span id="status-badge-psu" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Penyuplai daya listrik arus searah (DC) untuk komponen PC.</p>
+              </div>
+              <a href="hardware/psu.html" class="btn btn-pixel-green btn-sm w-100">Baca Materi PSU <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Heatsink -->
+          <div class="col-md-4 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">08. CPU Cooler</span>
+                  <span id="status-badge-heatsink" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Sistem pendingin untuk menyerap dan membuang panas CPU.</p>
+              </div>
+              <a href="hardware/heatsink.html" class="btn btn-pixel-green btn-sm w-100">Baca CPU Cooler <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- SATA -->
+          <div class="col-md-4 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">09. Kabel SATA</span>
+                  <span id="status-badge-sata" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Kabel transmisi data antara SSD/HDD ke Motherboard.</p>
+              </div>
+              <a href="hardware/sata.html" class="btn btn-pixel-green btn-sm w-100">Baca Kabel SATA <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Monitor -->
+          <div class="col-md-4 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">10. Monitor</span>
+                  <span id="status-badge-monitor" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Layar output visual utama untuk melihat hasil kerja komputer.</p>
+              </div>
+              <a href="hardware/monitor.html" class="btn btn-pixel-green btn-sm w-100">Baca Monitor <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Keyboard -->
+          <div class="col-md-4 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">11. Keyboard</span>
+                  <span id="status-badge-keyboard" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Papan ketik tombol teks dan shortcut perintah aplikasi.</p>
+              </div>
+              <a href="hardware/keyboard.html" class="btn btn-pixel-green btn-sm w-100">Baca Keyboard <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Mouse -->
+          <div class="col-md-4 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">12. Mouse</span>
+                  <span id="status-badge-mouse" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Perangkat penunjuk kursor di layar monitor.</p>
+              </div>
+              <a href="hardware/mouse.html" class="btn btn-pixel-green btn-sm w-100">Baca Mouse <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Casing -->
+          <div class="col-md-4 col-sm-6">
+            <div class="p-3 border border-2 border-dark rounded-3 bg-white pixel-box h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold text-dark">13. Casing Komputer</span>
+                  <span id="status-badge-casing" class="badge bg-secondary">Belum</span>
+                </div>
+                <p class="text-muted small mb-3">Kotak pelindung tempat merakit seluruh komponen hardware.</p>
+              </div>
+              <a href="hardware/casing.html" class="btn btn-pixel-green btn-sm w-100">Baca Casing <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       4. FOOTER PROFESIONAL DIGILEARN
+       ========================================================================== -->
+  <footer class="footer-digilearn">
+    <div class="container">
+      <span class="pixel-font fs-6 text-white d-block mb-2">Digi<span class="text-success">Learn</span></span>
+      <p class="small text-white-50 mb-1">Platform pembelajaran komputer interaktif untuk pemula.</p>
+      <p class="small mb-0 text-white-50">&copy; 2026 DigiLearn. Seluruh Hak Cipta Dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- AUDIO PLAYER -->
+  <audio id="bgMusic" loop>
+    <source src="../assets/audio/pixel-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/audio-manager.js"></script>
+</body>
+</html>

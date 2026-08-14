@@ -244,12 +244,21 @@ h1, h2, h3, h4, h5, h6 {
 .hero-img-container {
   position: relative;
   text-align: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .hero-img-container img {
-  max-width: 85%;
+  max-width: 100%;
   height: auto;
-  filter: drop-shadow(4px 4px 0px rgba(78, 52, 46, 0.4));
+  display: block;
+  margin: 0 auto;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  filter: drop-shadow(4px 4px 0px rgba(78, 52, 46, 0.2));
 }
 
 /* --------------------------------------------------------------------------
@@ -279,7 +288,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .card-kategori .card-img-top {
   height: 170px;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 16px;
   border-bottom: 3px solid var(--border-pixel);
   background-color: var(--accent-blue);
 }
@@ -394,5 +404,210 @@ h1, h2, h3, h4, h5, h6 {
   }
   .section-title {
     font-size: 1.4rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. FLOATING FEEDBACK BUTTON & MODAL POPUP (PHASE 4.5)
+   -------------------------------------------------------------------------- */
+.btn-floating-feedback {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9990;
+  background-color: var(--primary-green);
+  color: #ffffff;
+  border: 3px solid var(--border-pixel);
+  box-shadow: 4px 4px 0px var(--border-pixel);
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-floating-feedback:hover {
+  background-color: var(--primary-green-dark);
+  color: #ffffff;
+  transform: translateY(-4px);
+  box-shadow: 6px 6px 0px var(--border-pixel);
+}
+
+.btn-floating-feedback:active {
+  transform: translateY(0);
+  box-shadow: 2px 2px 0px var(--border-pixel);
+}
+
+/* Modal Overlay */
+.digi-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(3px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 16px;
+}
+
+.digi-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Modal Window */
+.digi-modal-content {
+  background-color: #ffffff;
+  border: 4px solid var(--border-pixel);
+  box-shadow: 8px 8px 0px var(--border-pixel);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 540px;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: scale(0.85);
+  transition: transform 0.3s ease;
+  padding: 28px;
+  position: relative;
+}
+
+.digi-modal-overlay.active .digi-modal-content {
+  transform: scale(1);
+}
+
+.digi-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid var(--border-pixel);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.digi-modal-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--secondary-brown-dark);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.digi-modal-close-icon {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--secondary-brown-dark);
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.2s ease;
+}
+
+.digi-modal-close-icon:hover {
+  color: #dc3545;
+}
+
+/* Form Styles inside Modal */
+.digi-form-group {
+  margin-bottom: 16px;
+}
+
+.digi-form-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--secondary-brown-dark);
+  margin-bottom: 6px;
+  display: block;
+}
+
+.digi-form-control {
+  width: 100%;
+  border: 2px solid var(--border-pixel);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background-color: #fafafa;
+}
+
+.digi-form-control:focus {
+  border-color: var(--primary-green);
+  box-shadow: 0 0 0 3px rgba(124, 179, 66, 0.25);
+  background-color: #ffffff;
+}
+
+.digi-form-error {
+  color: #dc3545;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: 4px;
+  display: none;
+}
+
+.digi-rating-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.digi-rating-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--bg-cream);
+  border: 2px solid var(--border-pixel);
+  border-radius: 6px;
+  padding: 6px 12px;
+  transition: all 0.2s ease;
+}
+
+.digi-rating-item:hover {
+  background: var(--primary-green-light);
+}
+
+.digi-rating-item input[type="radio"] {
+  accent-color: var(--primary-green-dark);
+  cursor: pointer;
+}
+
+/* Modal Actions Footer */
+.digi-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 2px solid var(--border-pixel);
+}
+
+@media (max-width: 576px) {
+  .btn-floating-feedback {
+    bottom: 18px;
+    right: 18px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+  .digi-modal-content {
+    padding: 20px;
+    width: 92%;
   }
 }

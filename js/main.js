@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   /* --------------------------------------------------------------------------
-     2. DAFTAR 20 MATERI MICRO-LEARNING & SISTEM PROGRESS LOCALSTORAGE
+     2. DAFTAR 25 MATERI MICRO-LEARNING & SISTEM PROGRESS LOCALSTORAGE
      -------------------------------------------------------------------------- */
   const MICRO_MATERIALS = [
     // Hardware (13)
@@ -56,10 +56,15 @@ document.addEventListener('DOMContentLoaded', function () {
     { id: 'mouse', category: 'hardware', name: 'Mouse' },
     { id: 'casing', category: 'hardware', name: 'Casing Komputer' },
 
-    // Software (3)
+    // Software (8)
     { id: 'os', category: 'software', name: 'Sistem Operasi' },
     { id: 'browser', category: 'software', name: 'Browser Web' },
-    { id: 'office', category: 'software', name: 'Microsoft Office' },
+    { id: 'word', category: 'software', name: 'Microsoft Word' },
+    { id: 'excel', category: 'software', name: 'Microsoft Excel' },
+    { id: 'powerpoint', category: 'software', name: 'Microsoft PowerPoint' },
+    { id: 'antivirus', category: 'software', name: 'Antivirus' },
+    { id: 'mediaplayer', category: 'software', name: 'Media Player' },
+    { id: 'komunikasi', category: 'software', name: 'Aplikasi Komunikasi' },
 
     // Internet (4)
     { id: 'internet', category: 'internet', name: 'Internet' },
@@ -213,78 +218,190 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* --------------------------------------------------------------------------
-     5. BACKGROUND MUSIC CONTROLLER (PHASE 4.1)
-     Menggunakan elemen HTML <audio id="bgMusic">
-     localStorage key: digilearnMusicEnabled
+     5. BACKGROUND MUSIC CONTROLLER
+     Dikelola secara terpusat oleh js/audio-manager.js (Global Audio Manager)
      -------------------------------------------------------------------------- */
-  const bgMusic = document.getElementById('bgMusic');
-  const audioBtn = document.getElementById('btn-audio-toggle');
 
-  if (bgMusic && audioBtn) {
-    // Set volume lembut agar tidak mengganggu belajar
-    bgMusic.volume = 0.25;
 
-    const audioIcon = audioBtn.querySelector('i');
+  /* --------------------------------------------------------------------------
+     6. FEEDBACK FORM MANAGER (PHASE 4.5)
+     Floating Button & Interactive Popup Form System
+     -------------------------------------------------------------------------- */
+  (function initFeedbackForm() {
+    if (!document.getElementById('digi-feedback-modal')) {
+      const wrapper = document.createElement('div');
+      wrapper.id = 'digi-feedback-wrapper';
+      wrapper.innerHTML = `
+        <div id="btn-floating-feedback" class="btn-floating-feedback" title="Beri Saran & Masukan">
+          <span>📝</span> <span>Saran</span>
+        </div>
 
-    // Fungsi Update Tampilan Icon & Tooltip
-    function updateAudioUI(isPlaying) {
-      if (isPlaying) {
-        audioIcon.className = 'bi bi-volume-up-fill';
-        audioBtn.classList.add('is-playing');
-        audioBtn.setAttribute('title', 'Matikan Musik');
-      } else {
-        audioIcon.className = 'bi bi-volume-mute-fill';
-        audioBtn.classList.remove('is-playing');
-        audioBtn.setAttribute('title', 'Aktifkan Musik');
+        <div id="digi-feedback-modal" class="digi-modal-overlay" aria-hidden="true">
+          <div class="digi-modal-content">
+            <div class="digi-modal-header">
+              <h3 class="digi-modal-title">
+                <i class="bi bi-chat-square-heart-fill text-success"></i> Form Saran DigiLearn
+              </h3>
+              <button type="button" id="btn-close-modal-x" class="digi-modal-close-icon" aria-label="Tutup">&times;</button>
+            </div>
+
+            <p class="text-muted small mb-3">Berikan masukan atau pertanyaan mengenai platform DigiLearn.</p>
+
+            <form id="digi-feedback-form" novalidate>
+              <div class="digi-form-group">
+                <label for="feedback-name" class="digi-form-label">Nama <span class="text-danger">*</span></label>
+                <input type="text" id="feedback-name" class="digi-form-control" placeholder="Masukkan nama Anda" required>
+                <div id="error-name" class="digi-form-error">Nama wajib diisi</div>
+              </div>
+
+              <div class="digi-form-group">
+                <label for="feedback-email" class="digi-form-label">Email <span class="text-danger">*</span></label>
+                <input type="email" id="feedback-email" class="digi-form-control" placeholder="nama@email.com" required>
+                <div id="error-email" class="digi-form-error">Email wajib diisi dengan format valid</div>
+              </div>
+
+              <div class="digi-form-group">
+                <label for="feedback-category" class="digi-form-label">Kategori <span class="text-danger">*</span></label>
+                <select id="feedback-category" class="digi-form-control" required>
+                  <option value="">-- Pilih Kategori --</option>
+                  <option value="Materi Hardware">Materi Hardware</option>
+                  <option value="Materi Software">Materi Software</option>
+                  <option value="Materi Jaringan">Materi Jaringan</option>
+                  <option value="Video Pembelajaran">Video Pembelajaran</option>
+                  <option value="Tampilan Website">Tampilan Website</option>
+                  <option value="Lainnya">Lainnya</option>
+                </select>
+                <div id="error-category" class="digi-form-error">Kategori wajib dipilih</div>
+              </div>
+
+              <div class="digi-form-group">
+                <label class="digi-form-label">Tingkat Kepuasan</label>
+                <div class="digi-rating-options">
+                  <label class="digi-rating-item">
+                    <input type="radio" name="feedback_rating" value="Sangat Puas" checked> 😁 Sangat Puas
+                  </label>
+                  <label class="digi-rating-item">
+                    <input type="radio" name="feedback_rating" value="Puas"> 🙂 Puas
+                  </label>
+                  <label class="digi-rating-item">
+                    <input type="radio" name="feedback_rating" value="Cukup"> 😐 Cukup
+                  </label>
+                  <label class="digi-rating-item">
+                    <input type="radio" name="feedback_rating" value="Kurang"> 🙁 Kurang
+                  </label>
+                </div>
+              </div>
+
+              <div class="digi-form-group">
+                <label for="feedback-message" class="digi-form-label">Pesan / Saran <span class="text-danger">*</span></label>
+                <textarea id="feedback-message" class="digi-form-control" rows="3" placeholder="Tuliskan saran atau masukan Anda..." required></textarea>
+                <div id="error-message" class="digi-form-error">Pesan wajib diisi</div>
+              </div>
+
+              <div class="digi-modal-actions">
+                <button type="button" id="btn-close-modal" class="btn btn-pixel-brown btn-sm px-3">Tutup</button>
+                <button type="submit" id="btn-submit-feedback" class="btn btn-pixel-green btn-sm px-4">Kirim</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(wrapper);
+    }
+
+    const floatingBtn = document.getElementById('btn-floating-feedback');
+    const modalOverlay = document.getElementById('digi-feedback-modal');
+    const closeBtn = document.getElementById('btn-close-modal');
+    const closeXBtn = document.getElementById('btn-close-modal-x');
+    const feedbackForm = document.getElementById('digi-feedback-form');
+
+    function openModal() {
+      if (modalOverlay) {
+        modalOverlay.classList.add('active');
+        modalOverlay.setAttribute('aria-hidden', 'false');
       }
     }
 
-    // Fungsi Toggle Musik ON / OFF
-    function toggleMusic() {
-      if (bgMusic.paused) {
-        bgMusic.play().then(function () {
-          localStorage.setItem('digilearnMusicEnabled', 'true');
-          updateAudioUI(true);
-        }).catch(function () {
-          // Browser memblokir autoplay — abaikan error
-        });
-      } else {
-        bgMusic.pause();
-        localStorage.setItem('digilearnMusicEnabled', 'false');
-        updateAudioUI(false);
+    function closeModal() {
+      if (modalOverlay) {
+        modalOverlay.classList.remove('active');
+        modalOverlay.setAttribute('aria-hidden', 'true');
+        hideErrors();
       }
     }
 
-    // Event Klik Tombol Audio di Navbar
-    audioBtn.addEventListener('click', toggleMusic);
+    function hideErrors() {
+      const errorElems = document.querySelectorAll('.digi-form-error');
+      errorElems.forEach(el => el.style.display = 'none');
+    }
 
-    // AUTO-RESUME: Jika user sebelumnya mengaktifkan musik (localStorage)
-    var musicEnabled = localStorage.getItem('digilearnMusicEnabled');
+    if (floatingBtn) floatingBtn.addEventListener('click', openModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (closeXBtn) closeXBtn.addEventListener('click', closeModal);
 
-    if (musicEnabled === 'true') {
-      // Tampilkan icon ON segera
-      updateAudioUI(true);
-
-      // Coba autoplay (berhasil jika user sudah berinteraksi sebelumnya)
-      bgMusic.play().then(function () {
-        updateAudioUI(true);
-      }).catch(function () {
-        // Browser memblokir autoplay — tunggu interaksi user pertama
-        function resumeOnInteraction() {
-          if (localStorage.getItem('digilearnMusicEnabled') === 'true') {
-            bgMusic.play().then(function () {
-              updateAudioUI(true);
-            }).catch(function () {});
-          }
-          document.removeEventListener('click', resumeOnInteraction);
-          document.removeEventListener('keydown', resumeOnInteraction);
-        }
-        document.addEventListener('click', resumeOnInteraction);
-        document.addEventListener('keydown', resumeOnInteraction);
+    if (modalOverlay) {
+      modalOverlay.addEventListener('click', function (e) {
+        if (e.target === modalOverlay) closeModal();
       });
-    } else {
-      updateAudioUI(false);
     }
-  }
 
+    if (feedbackForm) {
+      feedbackForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        hideErrors();
+
+        const nameInput = document.getElementById('feedback-name');
+        const emailInput = document.getElementById('feedback-email');
+        const catInput = document.getElementById('feedback-category');
+        const msgInput = document.getElementById('feedback-message');
+        const ratingInput = document.querySelector('input[name="feedback_rating"]:checked');
+
+        let isValid = true;
+
+        if (!nameInput.value.trim()) {
+          document.getElementById('error-name').style.display = 'block';
+          isValid = false;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
+          document.getElementById('error-email').style.display = 'block';
+          isValid = false;
+        }
+
+        if (!catInput.value) {
+          document.getElementById('error-category').style.display = 'block';
+          isValid = false;
+        }
+
+        if (!msgInput.value.trim()) {
+          document.getElementById('error-message').style.display = 'block';
+          isValid = false;
+        }
+
+        if (!isValid) return;
+
+        const feedbackData = {
+          name: nameInput.value.trim(),
+          email: emailInput.value.trim(),
+          category: catInput.value,
+          rating: ratingInput ? ratingInput.value : 'Puas',
+          message: msgInput.value.trim(),
+          timestamp: new Date().toISOString()
+        };
+
+        try {
+          const existingList = JSON.parse(localStorage.getItem('digilearnFeedbackList') || '[]');
+          existingList.push(feedbackData);
+          localStorage.setItem('digilearnFeedbackList', JSON.stringify(existingList));
+        } catch (err) {
+          console.warn('LocalStorage save feedback error:', err);
+        }
+
+        feedbackForm.reset();
+        closeModal();
+        showToast('Terima kasih atas masukan Anda. Form berhasil dikirim. 🎉', 'success');
+      });
+    }
+  })();
 });

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DigiLearn - Kumpulan Video Pembelajaran Komputer Interaktif untuk Pemula.">
+  <title>Video Pembelajaran - DigiLearn</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  
+  <!-- DigiLearn Styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/pages.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. NAVBAR COMPONENT
+       ========================================================================== -->
+  <nav class="navbar navbar-expand-lg navbar-digilearn sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">
+        <span class="brand-icon"><i class="bi bi-display"></i></span>
+        <span class="pixel-font text-dark fs-5">Digi<span class="text-success">Learn</span></span>
+      </a>
+
+      <button class="navbar-toggler border-2 border-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarDigiLearn" aria-controls="navbarDigiLearn" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarDigiLearn">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html"><i class="bi bi-house-door me-1"></i> Beranda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="perangkat-komputer.html"><i class="bi bi-cpu me-1"></i> Hardware</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="program-komputer.html"><i class="bi bi-window-stack me-1"></i> Software</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="internet-jaringan.html"><i class="bi bi-globe2 me-1"></i> Jaringan</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="video-pembelajaran.html"><i class="bi bi-play-btn me-1"></i> Video</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quiz.html"><i class="bi bi-controller me-1"></i> Kuis</a>
+          </li>
+          <li class="nav-item me-2 mt-2 mt-lg-0">
+            <button id="btn-audio-toggle" class="btn-audio-toggle" title="Aktifkan Musik">
+              <i class="bi bi-volume-mute-fill"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       2. HEADER / BREADCRUMB
+       ========================================================================== -->
+  <header class="page-banner py-4 bg-light border-bottom border-3 border-dark">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-2">
+          <li class="breadcrumb-item"><a href="../index.html">Beranda</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Video Pembelajaran</li>
+        </ol>
+      </nav>
+      <h1 class="fw-bold mb-2 text-dark"><i class="bi bi-youtube text-danger me-2"></i>Video Pembelajaran Komputer</h1>
+      <p class="text-muted mb-0 fs-6">Pelajari dasar komputer melalui video pembelajaran pilihan yang mudah dipahami oleh pemula.</p>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       3. VIDEO CONTENT SECTIONS
+       ========================================================================== -->
+  <main class="py-5">
+    <div class="container">
+
+      <!-- ----------------------------------------------------------------------
+           KATEGORI A: BELAJAR HARDWARE KOMPUTER (5 VIDEO)
+           ---------------------------------------------------------------------- -->
+      <section class="mb-5">
+        <div class="d-flex align-items-center justify-content-between border-bottom border-3 border-dark pb-2 mb-4">
+          <h2 class="h3 fw-bold text-dark mb-0">
+            <i class="bi bi-cpu text-success me-2"></i>A. Belajar Hardware Komputer
+          </h2>
+          <span class="pixel-badge">5 Video</span>
+        </div>
+
+        <div class="row g-4">
+          <!-- Video 1 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card pixel-box h-100 border-2 border-dark">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/2tQtnxGo1eE" title="Pengenalan Komputer & Hardware Dasar" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between p-3">
+                <div>
+                  <h3 class="card-title h5 fw-bold text-dark mb-2">Pengenalan Hardware Komputer</h3>
+                  <p class="card-text text-muted small mb-3">Penjelasan komponen fisik utama komputer dan cara kerja sistem dasar.</p>
+                </div>
+                <a href="https://youtu.be/2tQtnxGo1eE?si=r2sz3hZwNflpKQKF" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm w-100 fw-bold mt-2">
+                  <i class="bi bi-youtube me-1"></i> Tonton di YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card pixel-box h-100 border-2 border-dark">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/cNN_tTXABUA" title="Cara Kerja CPU / Prosesor Komputer" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between p-3">
+                <div>
+                  <h3 class="card-title h5 fw-bold text-dark mb-2">Cara Kerja CPU (Prosesor)</h3>
+                  <p class="card-text text-muted small mb-3">Memahami bagaimana chip CPU mengeksekusi perhitungan dan perintah.</p>
+                </div>
+                <a href="https://www.youtube.com/watch?v=cNN_tTXABUA" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm w-100 fw-bold mt-2">
+                  <i class="bi bi-youtube me-1"></i> Tonton di YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card pixel-box h-100 border-2 border-dark">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/a_N38iB5ZV4" title="Bagaimana RAM Bekerja?" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between p-3">
+                <div>
+                  <h3 class="card-title h5 fw-bold text-dark mb-2">Bagaimana RAM Bekerja?</h3>
+                  <p class="card-text text-muted small mb-3">Penjelasan memori kerja sementara dan bedanya dengan penyimpanan permanen.</p>
+                </div>
+                <a href="https://youtu.be/a_N38iB5ZV4?si=B5q9KOnF5H3uZ50n" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm w-100 fw-bold mt-2">
+                  <i class="bi bi-youtube me-1"></i> Tonton di YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card pixel-box h-100 border-2 border-dark">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/MP7I-2ED9zg" title="Peran Motherboard (Papan Induk)" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between p-3">
+                <div>
+                  <h3 class="card-title h5 fw-bold text-dark mb-2">Peran Motherboard (Papan Induk)</h3>
+                  <p class="card-text text-muted small mb-3">Mengenal papan sirkuit utama tempat menancapkan seluruh komponen PC.</p>
+                </div>
+                <a href="https://youtube.com/shorts/MP7I-2ED9zg?si=s2zd_V5qYJW6gk69" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm w-100 fw-bold mt-2">
+                  <i class="bi bi-youtube me-1"></i> Tonton di YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 5 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card pixel-box h-100 border-2 border-dark">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/1yTKk7gnJ70" title="SSD vs Harddisk (HDD)" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between p-3">
+                <div>
+                  <h3 class="card-title h5 fw-bold text-dark mb-2">SSD vs Harddisk (HDD)</h3>
+                  <p class="card-text text-muted small mb-3">Perbandingan kecepatan transfer data, struktur fisik, dan efisiensi.</p>
+                </div>
+                <a href="https://youtu.be/1yTKk7gnJ70?si=q_JISGtq9c5fKsc_" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm w-100 fw-bold mt-2">
+                  <i class="bi bi-youtube me-1"></i> Tonton di YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ----------------------------------------------------------------------
+           KATEGORI B: BELAJAR SOFTWARE KOMPUTER (4 VIDEO)
+           ---------------------------------------------------------------------- -->
+      <section class="mb-5">
+        <div class="d-flex align-items-center justify-content-between border-bottom border-3 border-dark pb-2 mb-4">
+          <h2 class="h3 fw-bold text-dark mb-0">
+            <i class="bi bi-window-stack text-primary me-2"></i>B. Belajar Software Komputer
+          </h2>
+          <span class="pixel-badge">4 Video</span>
+        </div>
+
+        <div class="row g-4">
+          <!-- Video 6 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card pixel-box h-100 border-2 border-dark">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/rRFZ5hExKI8" title="Pengenalan Sistem Operasi (OS)" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between p-3">
+                <div>
+                  <h3 class="card-title h5 fw-bold text-dark mb-2">Pengenalan Sistem Operasi</h3>
+                  <p class="card-text text-muted small mb-3">Memahami peran Windows, macOS, dan Linux sebagai jembatan aplikasi.</p>
+                </div>
+                <a href="https://youtu.be/rRFZ5hExKI8?si=Ysf6E3MwSDYR4Y3z" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm w-100 fw-bold mt-2">
+                  <i class="bi bi-youtube me-1"></i> Tonton di YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 7 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card pixel-box h-100 border-2 border-dark">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/deZzilQibLM" title="Panduan Menggunakan Browser Web" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between p-3">
+                <div>
+                  <h3 class="card-title h5 fw-bold text-dark mb-2">Panduan Browser Web</h3>
+                  <p class="card-text text-muted small mb-3">Cara membuka situs internet, menggunakan tab, dan browsing dengan aman.</p>
+                </div>
+                <a href="https://youtu.be/deZzilQibLM?si=KWsn1SpqFGFQ8TS5" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm w-100 fw-bold mt-2">
+                  <i class="bi bi-youtube me-1"></i> Tonton di YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 8 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card pixel-box h-100 border-2 border-dark">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/Vl0H-qTclOg" title="Dasar Microsoft Office untuk Pemula" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between p-3">
+                <div>
+                  <h3 class="card-title h5 fw-bold text-dark mb-2">Dasar Microsoft Office</h3>
+                  <p class="card-text text-muted small mb-3">Mengenal fungsi dasar MS Word, Excel, dan PowerPoint untuk pekerjaan.</p>
+                </div>
+                <a href="https://www.youtube.com/watch?v=Vl0H-qTclOg" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm w-100 fw-bold mt-2">
+                  <i class="bi bi-youtube me-1"></i> Tonton di YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 9 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card pixel-box h-100 border-2 border-dark">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/IvBfxSJWx6A" title="Menjaga Komputer dari Virus & Malware" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between p-3">
+                <div>
+                  <h3 class="card-title h5 fw-bold text-dark mb-2">Antivirus & Keamanan Data</h3>
+                  <p class="card-text text-muted small mb-3">Tips melindungi komputer dari serangan virus, malware, dan kejahatan siber.</p>
+                </div>
+                <a href="https://youtu.be/IvBfxSJWx6A?si=1TV44EhJfL-IsppX" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm w-100 fw-bold mt-2">
+                  <i class="bi bi-youtube me-1"></i> Tonton di YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ----------------------------------------------------------------------
+           KATEGORI C: BELAJAR INTERNET & JARINGAN (5 VIDEO)
+           ---------------------------------------------------------------------- -->
+      <section class="mb-4">
+        <div class="d-flex align-items-center justify-content-between border-bottom border-3 border-dark pb-2 mb-4">
+          <h2 class="h3 fw-bold text-dark mb-0">
+            <i class="bi bi-globe2 text-warning me-2"></i>C. Belajar Internet & Jaringan
+          </h2>
+          <span class="pixel-badge">5 Video</span>
+        </div>
+
+        <div class="row g-4">
+          <!-- Video 11 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card pixel-box h-100 border-2 border-dark">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/zKNi-lqYEKA" title="Bagaimana Cara Kerja Internet?" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between p-3">
+                <div>
+                  <h3 class="card-title h5 fw-bold text-dark mb-2">Cara Kerja Internet Global</h3>
+                  <p class="card-text text-muted small mb-3">Memahami bagaimana data bergerak lintas benua via kabel fiber optik.</p>
+                </div>
+                <a href="https://youtu.be/zKNi-lqYEKA?si=gUdtT_zwGb859g" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm w-100 fw-bold mt-2">
+                  <i class="bi bi-youtube me-1"></i> Tonton di YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 12 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card pixel-box h-100 border-2 border-dark">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/1z0ULvg_pW8" title="Fungsi Router & Jaringan Rumah" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between p-3">
+                <div>
+                  <h3 class="card-title h5 fw-bold text-dark mb-2">Fungsi Router & Jaringan Rumah</h3>
+                  <p class="card-text text-muted small mb-3">Cara router mengarahkan koneksi internet ke laptop dan smartphone.</p>
+                </div>
+                <a href="https://www.youtube.com/watch?v=1z0ULvg_pW8" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm w-100 fw-bold mt-2">
+                  <i class="bi bi-youtube me-1"></i> Tonton di YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 13 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card pixel-box h-100 border-2 border-dark">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/OuPFqIUD_EA" title="Memahami Frekuensi & Sinyal Wi-Fi" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between p-3">
+                <div>
+                  <h3 class="card-title h5 fw-bold text-dark mb-2">Teknologi Sinyal Wi-Fi</h3>
+                  <p class="card-text text-muted small mb-3">Penjelasan jaringan nirkabel frekuensi 2.4 GHz dan 5 GHz untuk internet.</p>
+                </div>
+                <a href="https://youtu.be/OuPFqIUD_EA?si=o30pSaNXtu0zfaAk" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm w-100 fw-bold mt-2">
+                  <i class="bi bi-youtube me-1"></i> Tonton di YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 14 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card pixel-box h-100 border-2 border-dark">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/2tBYH2yX9tI" title="Cara Kerja DNS Server Internet" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between p-3">
+                <div>
+                  <h3 class="card-title h5 fw-bold text-dark mb-2">Cara Kerja DNS Server</h3>
+                  <p class="card-text text-muted small mb-3">Bagaimana DNS menerjemahkan nama domain web menjadi IP address.</p>
+                </div>
+                <a href="https://youtu.be/2tBYH2yX9tI?si=LtB7aZbNA47AJ4o2" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm w-100 fw-bold mt-2">
+                  <i class="bi bi-youtube me-1"></i> Tonton di YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video 15 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card pixel-box h-100 border-2 border-dark">
+              <div class="ratio ratio-16x9">
+                <iframe src="https://www.youtube.com/embed/BO-QBVB3Glc" title="Pengenalan Dasar Jaringan Komputer" allowfullscreen loading="lazy"></iframe>
+              </div>
+              <div class="card-body d-flex flex-column justify-content-between p-3">
+                <div>
+                  <h3 class="card-title h5 fw-bold text-dark mb-2">Dasar Jaringan & IP Address</h3>
+                  <p class="card-text text-muted small mb-3">Pengenalan konsep IP Address, jaringan LAN, dan protokol komunikasi.</p>
+                </div>
+                <a href="https://youtu.be/BO-QBVB3Glc?si=FeSSdrXSS9zcl08k" target="_blank" rel="noopener noreferrer" class="btn btn-outline-danger btn-sm w-100 fw-bold mt-2">
+                  <i class="bi bi-youtube me-1"></i> Tonton di YouTube
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       4. FOOTER COMPONENT
+       ========================================================================== -->
+  <footer class="footer-digilearn">
+    <div class="container">
+      <span class="pixel-font fs-6 text-white d-block mb-2">Digi<span class="text-success">Learn</span></span>
+      <p class="small text-white-50 mb-1">Platform pembelajaran komputer interaktif untuk pemula.</p>
+      <p class="small mb-0 text-white-50">&copy; 2026 DigiLearn. Seluruh Hak Cipta Dilindungi.</p>
+    </div>
+  </footer>
+
+  <!-- AUDIO PLAYER -->
+  <audio id="bgMusic" loop>
+    <source src="../assets/audio/pixel-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/audio-manager.js"></script>
+</body>
+</html>
