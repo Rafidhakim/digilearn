@@ -559,6 +559,188 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
+/* --------------------------------------------------------------------------
+   CUSTOM DROPDOWN (FORM SARAN) - PIXEL RETRO THEME
+   -------------------------------------------------------------------------- */
+.digi-custom-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Visually hide native select while keeping it in DOM for form data & validation */
+.digi-select-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Custom Dropdown Trigger */
+.digi-select-trigger {
+  width: 100%;
+  min-height: 44px;
+  background-color: #FAF8F5;
+  border: 2px solid var(--border-pixel);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  outline: none !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Trigger Hover State */
+.digi-select-trigger:hover {
+  background-color: #FFFFFF;
+  border-color: var(--secondary-brown-dark);
+}
+
+/* Trigger Focus State & Open State */
+.digi-select-trigger:focus,
+.digi-select-trigger:focus-visible,
+.digi-custom-select-wrapper.open .digi-select-trigger {
+  border-color: var(--primary-green) !important;
+  box-shadow: 0 0 0 3px rgba(124, 179, 66, 0.25) !important;
+  outline: none !important;
+  background-color: #FFFFFF;
+}
+
+/* Invalid Validation State */
+.digi-select-trigger.is-invalid {
+  border-color: #dc3545 !important;
+  box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.2) !important;
+}
+
+/* Selected Value Text */
+.digi-select-value {
+  font-weight: 500;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.digi-select-value.text-muted {
+  color: #6C757D !important;
+  font-weight: 400;
+}
+
+/* Custom Arrow Icon (Rotates 180deg when open) */
+.digi-select-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  color: var(--secondary-brown-dark);
+  font-size: 0.95rem;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.digi-custom-select-wrapper.open .digi-select-arrow {
+  transform: rotate(180deg);
+}
+
+/* Panel Dropdown Custom */
+.digi-select-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 10050;
+  background-color: #FFFFFF;
+  border: 2px solid var(--border-pixel);
+  border-radius: 8px;
+  box-shadow: 4px 4px 0px var(--border-pixel), 0 8px 24px rgba(78, 52, 46, 0.12);
+  padding: 6px 0;
+  max-height: 230px;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px) scale(0.98);
+  transform-origin: top center;
+  transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), 
+              visibility 0.2s ease;
+}
+
+.digi-custom-select-wrapper.open .digi-select-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Custom Scrollbar for Dropdown Panel */
+.digi-select-panel::-webkit-scrollbar {
+  width: 6px;
+}
+.digi-select-panel::-webkit-scrollbar-track {
+  background: #FAF8F5;
+  border-radius: 0 8px 8px 0;
+}
+.digi-select-panel::-webkit-scrollbar-thumb {
+  background: var(--secondary-brown-light);
+  border-radius: 4px;
+}
+.digi-select-panel::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-brown);
+}
+
+/* Dropdown Option Items */
+.digi-select-option {
+  padding: 10px 16px;
+  font-size: 0.93rem;
+  font-family: var(--font-main);
+  color: var(--text-dark);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.digi-select-option.placeholder-option {
+  color: #8C8C8C;
+  font-style: italic;
+  border-bottom: 1px dashed var(--secondary-brown-light);
+  margin-bottom: 4px;
+  padding-bottom: 8px;
+}
+
+/* Option Hover State - DigiLearn Light Green */
+.digi-select-option:hover {
+  background-color: var(--primary-green-light);
+  color: var(--secondary-brown-dark);
+}
+
+/* Option Active/Selected State - Darker Green & White Text */
+.digi-select-option.selected {
+  background-color: var(--primary-green-dark) !important;
+  color: #FFFFFF !important;
+  font-weight: 600;
+}
+
+.digi-select-option.selected:hover {
+  background-color: var(--primary-green-dark) !important;
+  color: #FFFFFF !important;
+}
+
+
 .digi-rating-options {
   display: flex;
   flex-wrap: wrap;
@@ -611,3 +793,222 @@ h1, h2, h3, h4, h5, h6 {
     width: 92%;
   }
 }
+
+/* --------------------------------------------------------------------------
+   10. HALAMAN MATERI PEMBELAJARAN & BOX EDUKASI
+   -------------------------------------------------------------------------- */
+.page-banner {
+  background: linear-gradient(135deg, var(--bg-cream) 0%, var(--primary-green-light) 100%);
+  border-bottom: 3px solid var(--border-pixel);
+  padding: 40px 0 30px 0;
+}
+
+.page-banner .breadcrumb-item a {
+  color: var(--secondary-brown);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.page-banner .breadcrumb-item.active {
+  color: var(--secondary-brown-dark);
+  font-weight: 700;
+}
+
+.material-content {
+  padding: 50px 0;
+  background-color: var(--bg-cream);
+}
+
+.material-card {
+  background-color: #ffffff;
+  border: 3px solid var(--border-pixel);
+  box-shadow: 4px 4px 0px var(--border-pixel);
+  border-radius: 12px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.material-card h2 {
+  font-size: 1.6rem;
+  color: var(--secondary-brown-dark);
+  border-bottom: 3px solid var(--primary-green-light);
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.material-card h3 {
+  font-size: 1.25rem;
+  color: var(--secondary-brown-dark);
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.material-img,
+.category-image,
+.image-card,
+.material-img-clean {
+  width: auto;
+  max-width: 100%;
+  max-height: 220px;
+  height: auto;
+  object-fit: contain;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0;
+  padding: 0;
+  margin: 0 auto 20px auto;
+  display: block;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.pixel-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.pixel-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.pixel-list li::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary-green);
+  font-size: 12px;
+}
+
+.pixel-table-wrapper {
+  overflow-x: auto;
+  border: 3px solid var(--border-pixel);
+  box-shadow: 4px 4px 0px var(--border-pixel);
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pixel-table {
+  width: 100%;
+  margin-bottom: 0;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.pixel-table th {
+  background-color: var(--secondary-brown);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-bottom: 3px solid var(--border-pixel);
+}
+
+.pixel-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #E0E0E0;
+  vertical-align: middle;
+}
+
+.pixel-table tbody tr:nth-child(even) {
+  background-color: var(--bg-cream);
+}
+
+.pixel-table tbody tr:hover {
+  background-color: var(--primary-green-light);
+}
+
+.diagram-box {
+  background: var(--bg-cream);
+  border: 3px solid var(--border-pixel);
+  box-shadow: 4px 4px 0px var(--border-pixel);
+  border-radius: 12px;
+  padding: 24px;
+  margin: 24px 0;
+}
+
+.diagram-step-card {
+  background: #FFFFFF;
+  border: 2px solid var(--border-pixel);
+  box-shadow: 3px 3px 0px var(--border-pixel);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  height: 100%;
+}
+
+.diagram-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--secondary-brown);
+  font-weight: bold;
+}
+
+.quiz-option-label {
+  display: block;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  border: 2px solid var(--border-pixel);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 0;
+  box-shadow: 2px 2px 0px var(--border-pixel);
+}
+
+.quiz-option-label:hover {
+  background-color: var(--primary-green-light);
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0px var(--border-pixel);
+}
+
+.quiz-option-input:checked + .quiz-option-label {
+  background-color: var(--primary-green);
+  color: #ffffff;
+  border-color: var(--border-pixel);
+  box-shadow: inset 2px 2px 0px rgba(0,0,0,0.2);
+  transform: translateY(1px);
+}
+
+.box-tips-pemula {
+  background-color: #e8f5e9;
+  border: 2px solid #2e7d32;
+  box-shadow: 3px 3px 0px #1b5e20;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.box-fakta-menarik {
+  background-color: #e3f2fd;
+  border: 2px solid #1565c0;
+  box-shadow: 3px 3px 0px #0d47a1;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.box-istilah-penting {
+  background-color: #fffde7;
+  border: 2px solid #f57f17;
+  box-shadow: 3px 3px 0px #e65100;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.box-ringkasan {
+  background-color: #f9f9f9;
+  border: 3px solid var(--border-pixel);
+  box-shadow: 4px 4px 0px var(--border-pixel);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-top: 30px;
+  margin-bottom: 24px;
+}
+

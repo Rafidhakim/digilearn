@@ -1,6 +1,6 @@
 /* ==========================================================================
-   DigiLearn - Quiz System (js/quiz.js)
-   Phase 4.2.1: Interactive Quiz System with 3 Separate Difficulty Question Banks
+   DigiLearn - Sistem Evaluasi & Kuis Pembelajaran (js/quiz.js)
+   Modul Kuis Interaktif Berdasarkan 3 Tingkat Kesulitan Soal
    ========================================================================== */
 
 // --- STATE MANAGEMENT ---
@@ -551,7 +551,6 @@ function renderQuestion() {
  */
 function selectOption(index) {
   userAnswers[currentQuestionIndex] = index;
-  console.log("Current User Answers Array:", userAnswers);
 
   // Update UI Kartu Jawaban secara langsung
   const container = document.getElementById('quiz-options-container');

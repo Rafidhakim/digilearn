@@ -1,6 +1,6 @@
 /* ==========================================================================
-   DigiLearn - Main JavaScript File (js/main.js)
-   Phase 4: Micro-learning Progress Tracking (20 Materi Individual) & Fondasi Kuis
+   DigiLearn - Skrip Utama Aplikasi (js/main.js)
+   Navigasi, Progress Tracking, Audio Player, dan Form Saran Interaktif
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -261,16 +261,35 @@ document.addEventListener('DOMContentLoaded', function () {
               </div>
 
               <div class="digi-form-group">
-                <label for="feedback-category" class="digi-form-label">Kategori <span class="text-danger">*</span></label>
-                <select id="feedback-category" class="digi-form-control" required>
-                  <option value="">-- Pilih Kategori --</option>
-                  <option value="Materi Hardware">Materi Hardware</option>
-                  <option value="Materi Software">Materi Software</option>
-                  <option value="Materi Jaringan">Materi Jaringan</option>
-                  <option value="Video Pembelajaran">Video Pembelajaran</option>
-                  <option value="Tampilan Website">Tampilan Website</option>
-                  <option value="Lainnya">Lainnya</option>
-                </select>
+                <label for="feedback-category-trigger" class="digi-form-label">Kategori <span class="text-danger">*</span></label>
+                <div class="digi-custom-select-wrapper" id="digi-category-select-wrapper">
+                  <select id="feedback-category" class="digi-select-hidden" required tabindex="-1">
+                    <option value="">-- Pilih Kategori --</option>
+                    <option value="Materi Hardware">Materi Hardware</option>
+                    <option value="Materi Software">Materi Software</option>
+                    <option value="Materi Jaringan">Materi Jaringan</option>
+                    <option value="Video Pembelajaran">Video Pembelajaran</option>
+                    <option value="Tampilan Website">Tampilan Website</option>
+                    <option value="Lainnya">Lainnya</option>
+                  </select>
+
+                  <div id="feedback-category-trigger" class="digi-select-trigger" tabindex="0" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="digi-category-options">
+                    <span class="digi-select-value text-muted">-- Pilih Kategori --</span>
+                    <span class="digi-select-arrow">
+                      <i class="bi bi-chevron-down"></i>
+                    </span>
+                  </div>
+
+                  <div class="digi-select-panel" id="digi-category-options" role="listbox">
+                    <div class="digi-select-option placeholder-option selected" data-value="" role="option" aria-selected="true">-- Pilih Kategori --</div>
+                    <div class="digi-select-option" data-value="Materi Hardware" role="option" aria-selected="false">Materi Hardware</div>
+                    <div class="digi-select-option" data-value="Materi Software" role="option" aria-selected="false">Materi Software</div>
+                    <div class="digi-select-option" data-value="Materi Jaringan" role="option" aria-selected="false">Materi Jaringan</div>
+                    <div class="digi-select-option" data-value="Video Pembelajaran" role="option" aria-selected="false">Video Pembelajaran</div>
+                    <div class="digi-select-option" data-value="Tampilan Website" role="option" aria-selected="false">Tampilan Website</div>
+                    <div class="digi-select-option" data-value="Lainnya" role="option" aria-selected="false">Lainnya</div>
+                  </div>
+                </div>
                 <div id="error-category" class="digi-form-error">Kategori wajib dipilih</div>
               </div>
 
@@ -315,6 +334,90 @@ document.addEventListener('DOMContentLoaded', function () {
     const closeXBtn = document.getElementById('btn-close-modal-x');
     const feedbackForm = document.getElementById('digi-feedback-form');
 
+    // Custom Dropdown logic
+    const customSelectWrapper = document.getElementById('digi-category-select-wrapper');
+    const selectTrigger = document.getElementById('feedback-category-trigger');
+    const selectValueSpan = customSelectWrapper ? customSelectWrapper.querySelector('.digi-select-value') : null;
+    const selectOptions = customSelectWrapper ? customSelectWrapper.querySelectorAll('.digi-select-option') : [];
+    const hiddenSelect = document.getElementById('feedback-category');
+
+    function toggleDropdown(forceState) {
+      if (!customSelectWrapper || !selectTrigger) return;
+      const isOpen = forceState !== undefined ? forceState : !customSelectWrapper.classList.contains('open');
+      if (isOpen) {
+        customSelectWrapper.classList.add('open');
+        selectTrigger.setAttribute('aria-expanded', 'true');
+      } else {
+        customSelectWrapper.classList.remove('open');
+        selectTrigger.setAttribute('aria-expanded', 'false');
+      }
+    }
+
+    function selectOption(optElem) {
+      if (!optElem || !hiddenSelect) return;
+      const val = optElem.getAttribute('data-value') || '';
+      const text = optElem.textContent.trim();
+
+      hiddenSelect.value = val;
+      hiddenSelect.dispatchEvent(new Event('change', { bubbles: true }));
+
+      if (selectValueSpan) {
+        selectValueSpan.textContent = text;
+        if (val === '') {
+          selectValueSpan.classList.add('text-muted');
+        } else {
+          selectValueSpan.classList.remove('text-muted');
+        }
+      }
+
+      selectOptions.forEach(opt => {
+        opt.classList.remove('selected');
+        opt.setAttribute('aria-selected', 'false');
+      });
+      optElem.classList.add('selected');
+      optElem.setAttribute('aria-selected', 'true');
+
+      const errCategory = document.getElementById('error-category');
+      if (errCategory) errCategory.style.display = 'none';
+      if (selectTrigger) selectTrigger.classList.remove('is-invalid');
+
+      toggleDropdown(false);
+    }
+
+    function resetCustomDropdown() {
+      const defaultOpt = customSelectWrapper ? customSelectWrapper.querySelector('.digi-select-option[data-value=""]') : null;
+      if (defaultOpt) selectOption(defaultOpt);
+    }
+
+    if (selectTrigger) {
+      selectTrigger.addEventListener('click', function (e) {
+        e.stopPropagation();
+        toggleDropdown();
+      });
+
+      selectTrigger.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') {
+          e.preventDefault();
+          toggleDropdown(true);
+        } else if (e.key === 'Escape') {
+          toggleDropdown(false);
+        }
+      });
+    }
+
+    selectOptions.forEach(opt => {
+      opt.addEventListener('click', function (e) {
+        e.stopPropagation();
+        selectOption(opt);
+      });
+    });
+
+    document.addEventListener('click', function (e) {
+      if (customSelectWrapper && !customSelectWrapper.contains(e.target)) {
+        toggleDropdown(false);
+      }
+    });
+
     function openModal() {
       if (modalOverlay) {
         modalOverlay.classList.add('active');
@@ -327,12 +430,14 @@ document.addEventListener('DOMContentLoaded', function () {
         modalOverlay.classList.remove('active');
         modalOverlay.setAttribute('aria-hidden', 'true');
         hideErrors();
+        toggleDropdown(false);
       }
     }
 
     function hideErrors() {
       const errorElems = document.querySelectorAll('.digi-form-error');
       errorElems.forEach(el => el.style.display = 'none');
+      if (selectTrigger) selectTrigger.classList.remove('is-invalid');
     }
 
     if (floatingBtn) floatingBtn.addEventListener('click', openModal);
@@ -371,6 +476,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!catInput.value) {
           document.getElementById('error-category').style.display = 'block';
+          if (selectTrigger) selectTrigger.classList.add('is-invalid');
           isValid = false;
         }
 
@@ -399,6 +505,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         feedbackForm.reset();
+        resetCustomDropdown();
         closeModal();
         showToast('Terima kasih atas masukan Anda. Form berhasil dikirim. 🎉', 'success');
       });
